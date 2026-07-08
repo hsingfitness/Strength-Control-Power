@@ -1,6 +1,6 @@
 /* ===================================
    Strength Control Power
-   Main Stylesheet
+   Main Style Sheet
 =================================== */
 
 
@@ -15,13 +15,16 @@
 
 body {
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
     color: #333;
 
-    background-color: #ffffff;
+    background: #fff;
 
 }
 
@@ -36,7 +39,7 @@ body {
 
     max-width: 1200px;
 
-    margin: auto;
+    margin: 0 auto;
 
 }
 
@@ -46,9 +49,25 @@ h1,
 h2,
 h3 {
 
-    margin-bottom: 15px;
-
     color: #222;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+h2 {
+
+    font-size: 36px;
+
+}
+
+
+
+h3 {
+
+    font-size: 24px;
 
 }
 
@@ -56,7 +75,9 @@ h3 {
 
 p {
 
-    margin-bottom: 15px;
+    font-size: 17px;
+
+    margin-bottom: 20px;
 
 }
 
@@ -64,9 +85,9 @@ p {
 
 a {
 
-    text-decoration: none;
+    text-decoration:none;
 
-    color: #0066cc;
+    color:#0066cc;
 
 }
 
@@ -75,17 +96,7 @@ a {
 ul,
 ol {
 
-    margin-left: 25px;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-section {
-
-    padding: 60px 0;
+    margin-bottom:20px;
 
 }
 
@@ -98,11 +109,11 @@ section {
 
 header {
 
-    background: #111;
+    background:#111;
 
-    color: white;
+    color:white;
 
-    padding: 20px 0;
+    padding:20px 0;
 
 }
 
@@ -110,25 +121,32 @@ header {
 
 header h1 {
 
-    color: white;
+    color:white;
 
-    text-align: center;
+    text-align:center;
+
+    font-size:32px;
 
 }
 
 
 
+
+
+/* ---------- Navigation ---------- */
+
+
 nav ul {
 
-    display: flex;
+    list-style:none;
 
-    justify-content: center;
+    display:flex;
 
-    gap: 25px;
+    justify-content:center;
 
-    list-style: none;
+    gap:25px;
 
-    margin: 20px 0 0 0;
+    margin-top:20px;
 
 }
 
@@ -136,18 +154,25 @@ nav ul {
 
 nav a {
 
-    color: white;
+    color:white;
 
-    font-weight: bold;
+    font-weight:bold;
+
+    padding:10px 15px;
+
+    border-radius:5px;
 
 }
 
 
 
 nav a:hover,
-nav .active {
+nav a.active {
 
-    color: #00ccff;
+
+    background:#0066cc;
+
+    color:white;
 
 }
 
@@ -155,7 +180,7 @@ nav .active {
 
 
 
-/* ---------- Hero Section ---------- */
+/* ---------- Hero ---------- */
 
 
 #hero,
@@ -165,16 +190,22 @@ nav .active {
     background:
 
     linear-gradient(
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.6)
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
     );
 
 
-    color: white;
+    min-height:550px;
 
-    text-align: center;
+    display:flex;
 
-    padding: 100px 20px;
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px 20px;
 
 }
 
@@ -183,9 +214,9 @@ nav .active {
 #hero h2,
 .page-hero h2 {
 
-    color: white;
+    color:white;
 
-    font-size: 42px;
+    font-size:48px;
 
 }
 
@@ -194,9 +225,9 @@ nav .active {
 #hero p,
 .page-hero p {
 
-    color: white;
+    color:white;
 
-    font-size: 20px;
+    font-size:20px;
 
 }
 
@@ -209,17 +240,20 @@ nav .active {
 
 .button {
 
-    display: inline-block;
 
-    background: #0066cc;
+    display:inline-block;
 
-    color: white;
+    background:#0066cc;
 
-    padding: 12px 30px;
+    color:white;
 
-    border-radius: 5px;
+    padding:14px 35px;
 
-    margin-top: 20px;
+    border-radius:8px;
+
+    margin-top:20px;
+
+    font-weight:bold;
 
 }
 
@@ -227,7 +261,7 @@ nav .active {
 
 .button:hover {
 
-    background: #004999;
+    background:#004999;
 
 }
 
@@ -235,33 +269,44 @@ nav .active {
 
 
 
-/* ---------- Feature Cards ---------- */
+/* ---------- Sections ---------- */
 
 
-#features .container {
+section {
 
-
-    display: grid;
-
-    grid-template-columns: repeat(
-        3,
-        1fr
-    );
-
-    gap: 30px;
+    padding:70px 0;
 
 }
 
+
+
+section:nth-child(even){
+
+    background:#f7f7f7;
+
+}
+
+
+
+
+
+/* ---------- Cards ---------- */
 
 
 article {
 
 
-    background: #f5f5f5;
+    background:white;
 
-    padding: 25px;
+    padding:30px;
 
-    border-radius: 10px;
+    border-radius:12px;
+
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,0.1);
+
 
 }
 
@@ -269,28 +314,7 @@ article {
 
 article h3 {
 
-    color: #0066cc;
-
-}
-
-
-
-
-
-/* ---------- Content Sections ---------- */
-
-
-.container h2 {
-
-    font-size: 32px;
-
-}
-
-
-
-.container h3 {
-
-    margin-top: 25px;
+    color:#0066cc;
 
 }
 
@@ -301,9 +325,19 @@ article h3 {
 /* ---------- Contact Form ---------- */
 
 
-form {
+input,
+textarea {
 
-    max-width: 700px;
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:16px;
 
 }
 
@@ -311,39 +345,11 @@ form {
 
 label {
 
-    display: block;
+    display:block;
 
-    margin-top: 15px;
+    margin-top:15px;
 
-    font-weight: bold;
-
-}
-
-
-
-input,
-textarea {
-
-
-    width: 100%;
-
-    padding: 12px;
-
-    margin-top: 5px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 5px;
-
-    font-size: 16px;
-
-}
-
-
-
-textarea {
-
-    resize: vertical;
+    font-weight:bold;
 
 }
 
@@ -352,21 +358,17 @@ textarea {
 button {
 
 
-    margin-top: 20px;
+    background:#0066cc;
 
-    padding: 12px 30px;
+    color:white;
 
-    background: #0066cc;
+    border:none;
 
-    color: white;
+    padding:14px 35px;
 
-    border: none;
+    border-radius:6px;
 
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-size: 16px;
+    cursor:pointer;
 
 }
 
@@ -374,7 +376,7 @@ button {
 
 button:hover {
 
-    background: #004999;
+    background:#004999;
 
 }
 
@@ -387,13 +389,13 @@ button:hover {
 
 footer {
 
-    background: #111;
+    background:#111;
 
-    color: white;
+    color:white;
 
-    text-align: center;
+    text-align:center;
 
-    padding: 30px 0;
+    padding:40px 0;
 
 }
 
@@ -401,7 +403,7 @@ footer {
 
 footer p {
 
-    color: white;
+    color:white;
 
 }
 
@@ -409,7 +411,7 @@ footer p {
 
 footer a {
 
-    color: #00ccff;
+    color:#00ccff;
 
 }
 
@@ -417,37 +419,28 @@ footer a {
 
 
 
-/* ---------- Responsive Design ---------- */
+/* ---------- Animation ---------- */
 
 
-@media(max-width:768px){
+section {
 
+    transition:
 
-    nav ul {
+    transform 0.3s ease;
 
-        flex-direction: column;
-
-        align-items: center;
-
-    }
+}
 
 
 
-    #features .container {
-
-        grid-template-columns: 1fr;
-
-    }
+article:hover {
 
 
+    transform:
 
-    #hero h2,
-    .page-hero h2 {
+    translateY(-8px);
 
-        font-size: 30px;
+    transition:
 
-    }
-
-
+    0.3s ease;
 
 }
