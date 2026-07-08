@@ -4,16 +4,27 @@
 =================================== */
 
 
-/* ---------- Tablet Devices ----------
+/* ===================================
+   Tablet
    768px - 1024px
------------------------------------ */
+=================================== */
 
-@media (max-width: 1024px) {
+
+@media (max-width:1024px){
+
 
 
     .container {
 
-        width: 92%;
+        width:92%;
+
+    }
+
+
+
+    h2 {
+
+        font-size:32px;
 
     }
 
@@ -22,16 +33,8 @@
     #hero h2,
     .page-hero h2 {
 
-        font-size: 36px;
 
-    }
-
-
-
-    #hero p,
-    .page-hero p {
-
-        font-size: 18px;
+        font-size:40px;
 
     }
 
@@ -39,9 +42,11 @@
 
     #features .container {
 
+
         grid-template-columns:
 
-        repeat(2, 1fr);
+        repeat(2,1fr);
+
 
     }
 
@@ -49,9 +54,11 @@
 
     .exercise-grid {
 
+
         grid-template-columns:
 
-        repeat(2, 1fr);
+        repeat(2,1fr);
+
 
     }
 
@@ -61,19 +68,24 @@
 
 
 
-/* ---------- Mobile Devices ----------
-   below 768px
------------------------------------ */
 
-@media (max-width: 768px) {
+
+/* ===================================
+   Mobile
+   Below 768px
+=================================== */
+
+
+@media(max-width:768px){
 
 
 
     body {
 
-        font-size: 16px;
+        font-size:16px;
 
     }
+
 
 
 
@@ -83,7 +95,9 @@
 
     header h1 {
 
-        font-size: 28px;
+
+        font-size:26px;
+
 
     }
 
@@ -92,11 +106,10 @@
     nav ul {
 
 
-        flex-direction: column;
+        flex-direction:column;
 
-        gap: 12px;
+        gap:10px;
 
-        text-align: center;
 
     }
 
@@ -104,11 +117,16 @@
 
     nav a {
 
-        display: block;
 
-        padding: 8px;
+        display:block;
+
+        width:100%;
+
+        text-align:center;
+
 
     }
+
 
 
 
@@ -121,9 +139,9 @@
     .page-hero {
 
 
-        min-height: 350px;
+        min-height:400px;
 
-        padding: 60px 20px;
+        padding:50px 20px;
 
 
     }
@@ -134,7 +152,8 @@
     .page-hero h2 {
 
 
-        font-size: 28px;
+        font-size:30px;
+
 
     }
 
@@ -144,10 +163,10 @@
     .page-hero p {
 
 
-        font-size: 16px;
+        font-size:17px;
+
 
     }
-
 
 
 
@@ -158,22 +177,39 @@
 
     section {
 
-        padding: 40px 0;
+
+        padding:45px 0;
+
 
     }
 
 
 
-    .container h2 {
+    h2 {
 
-        font-size: 26px;
+
+        font-size:28px;
+
+
+    }
+
+
+
+    h3 {
+
+
+        font-size:22px;
+
 
     }
 
 
 
 
-    /* Feature Cards */
+
+
+
+    /* Cards */
 
 
     #features .container {
@@ -188,11 +224,10 @@
 
 
 
-
     article {
 
 
-        padding: 20px;
+        padding:25px;
 
     }
 
@@ -200,10 +235,7 @@
 
 
 
-    /* Two Column */
-
-
-    .two-column {
+    .exercise-grid {
 
 
         grid-template-columns:
@@ -218,10 +250,10 @@
 
 
 
-    /* Exercise Cards */
+    /* Two column */
 
 
-    .exercise-grid {
+    .two-column {
 
 
         grid-template-columns:
@@ -251,11 +283,33 @@
 
 
     input,
-    textarea,
+    textarea {
+
+
+        font-size:16px;
+
+
+    }
+
+
+
     button {
 
 
-        font-size: 16px;
+        width:100%;
+
+
+    }
+
+
+
+    .button {
+
+
+        width:100%;
+
+        text-align:center;
+
 
     }
 
@@ -269,31 +323,36 @@
 
 
 
-/* ---------- Small Phones ----------
-   below 480px
------------------------------------ */
+/* ===================================
+   Small Phone
+   Below 480px
+=================================== */
 
-@media (max-width: 480px) {
+
+@media(max-width:480px){
 
 
 
     .container {
 
 
-        width: 95%;
+        width:95%;
 
 
     }
+
+
 
 
 
     header h1 {
 
 
-        font-size: 24px;
+        font-size:22px;
 
 
     }
+
 
 
 
@@ -302,7 +361,7 @@
     .page-hero h2 {
 
 
-        font-size: 24px;
+        font-size:24px;
 
 
     }
@@ -310,36 +369,52 @@
 
 
 
-    .button {
+
+    #hero p,
+    .page-hero p {
 
 
-        width: 100%;
+        font-size:15px;
 
-        text-align: center;
+
+    }
+
+
+
+
+
+    section {
+
+
+        padding:35px 0;
 
 
     }
 
 
 
-    ul,
-    ol {
 
 
-        margin-left: 18px;
+    article {
+
+
+        padding:20px;
 
 
     }
+
+
 
 
 
     footer {
 
 
-        font-size: 14px;
+        font-size:14px;
 
 
     }
+
 
 
 }
