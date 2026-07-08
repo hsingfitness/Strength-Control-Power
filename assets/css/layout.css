@@ -9,13 +9,15 @@
 
 .container {
 
-    width: 90%;
+    width:90%;
 
-    max-width: 1200px;
+    max-width:1200px;
 
-    margin: 0 auto;
+    margin:0 auto;
 
 }
+
+
 
 
 
@@ -24,19 +26,32 @@
 
 header .container {
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    align-items: center;
+    align-items:center;
 
 }
 
 
 
+header h1 {
+
+    width:100%;
+
+}
+
+
+
+
+
+/* ---------- Navigation Layout ---------- */
+
+
 nav {
 
-    width: 100%;
+    width:100%;
 
 }
 
@@ -44,13 +59,13 @@ nav {
 
 nav ul {
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 
 }
 
@@ -64,44 +79,45 @@ nav ul {
 #hero,
 .page-hero {
 
-    display: flex;
 
-    justify-content: center;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    min-height: 450px;
-
-}
-
-
-
-.hero-content {
-
-    max-width: 800px;
-
-    text-align: center;
+    justify-content:center;
 
 }
 
 
 
+#hero .container,
+.page-hero .container {
 
 
-/* ---------- Three Pillars Layout ---------- */
+    max-width:900px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+/* ---------- Feature Cards ---------- */
 
 
 #features .container {
 
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
 
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
 
-    gap: 30px;
+    gap:30px;
 
 }
 
@@ -110,11 +126,13 @@ nav ul {
 #features article {
 
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    justify-content: space-between;
+    justify-content:space-between;
+
+    min-height:280px;
 
 }
 
@@ -122,22 +140,22 @@ nav ul {
 
 
 
-/* ---------- Content Layout ---------- */
+/* ---------- Main Content ---------- */
 
 
 main .container {
 
 
-    max-width: 900px;
+    max-width:900px;
 
 }
 
 
 
-main section:nth-child(even) {
+main section .container {
 
 
-    background-color: #f8f8f8;
+    margin:auto;
 
 }
 
@@ -145,56 +163,104 @@ main section:nth-child(even) {
 
 
 
-/* ---------- Exercise Cards ---------- */
+/* ---------- Exercise / Training Cards ---------- */
 
 
 .exercise-grid {
 
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
 
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
 
-    gap: 25px;
-
-}
-
-
-
-.exercise-card {
-
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
+    gap:30px;
 
 }
 
 
 
+.exercise-grid article {
 
 
-/* ---------- Contact Page Layout ---------- */
+    min-height:250px;
+
+}
+
+
+
+
+
+/* ---------- Two Column Sections ---------- */
+
+
+.two-column {
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+
+
+
+
+/* ---------- Images ---------- */
+
+
+.image-container {
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.image-container img {
+
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+
+
+/* ---------- Contact Layout ---------- */
 
 
 .contact-info {
 
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
 
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
 
-    gap: 25px;
+    gap:30px;
 
-    margin: 30px 0;
+    margin-bottom:40px;
 
 }
 
@@ -203,9 +269,9 @@ main section:nth-child(even) {
 .contact-form {
 
 
-    display: flex;
+    max-width:700px;
 
-    flex-direction: column;
+    margin:auto;
 
 }
 
@@ -219,36 +285,13 @@ main section:nth-child(even) {
 footer .container {
 
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    justify-content: center;
+    align-items:center;
 
-    align-items: center;
-
-}
-
-
-
-
-
-/* ---------- Two Column Layout ---------- */
-
-
-.two-column {
-
-
-    display: grid;
-
-    grid-template-columns:
-
-    repeat(2, 1fr);
-
-
-    gap: 40px;
-
-    align-items: center;
+    justify-content:center;
 
 }
 
@@ -256,28 +299,22 @@ footer .container {
 
 
 
-/* ---------- Image Layout ---------- */
+/* ---------- CTA Sections ---------- */
 
 
-.image-container {
+#cta {
 
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    text-align:center;
 
 }
 
 
 
-.image-container img {
+#cta .container {
 
 
-    max-width: 100%;
-
-    height: auto;
+    max-width:800px;
 
 }
 
@@ -285,16 +322,17 @@ footer .container {
 
 
 
-/* ---------- Mobile Layout ---------- */
+/* ---------- Mobile Adjustment ---------- */
 
 
 @media(max-width:900px){
 
 
+
     #features .container {
 
 
-        grid-template-columns: 1fr;
+        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -303,7 +341,7 @@ footer .container {
     .exercise-grid {
 
 
-        grid-template-columns: 1fr;
+        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -312,7 +350,7 @@ footer .container {
     .contact-info {
 
 
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
 
     }
 
@@ -321,7 +359,7 @@ footer .container {
     .two-column {
 
 
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
 
     }
 
@@ -335,22 +373,31 @@ footer .container {
 @media(max-width:600px){
 
 
+
     .container {
 
 
-        width: 95%;
+        width:95%;
 
     }
 
 
 
-    nav ul {
+    #features .container {
 
 
-        flex-direction: column;
+        grid-template-columns:1fr;
 
     }
 
+
+
+    .exercise-grid {
+
+
+        grid-template-columns:1fr;
+
+    }
 
 
 }
