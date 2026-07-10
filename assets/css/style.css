@@ -108,7 +108,13 @@ nav a:hover, nav a.active { color: var(--brand); }
 
 #hero, .page-hero { display: grid; min-height: 245px; place-items: center; padding: 4rem 0; background: #ffffff; text-align: center; border-bottom: 1px solid var(--line); }
 #hero .container, .page-hero .container { max-width: 860px; }
-#hero h2, .page-hero h2 { color: var(--ink); font-size: clamp(2.7rem, 6vw, 4.2rem); font-weight: 900; letter-spacing: -0.045em; }
+#hero h2, .page-hero h2 { 
+    color: var(--ink); 
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900; 
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+}
 #hero p, .page-hero p { max-width: 680px; margin: 0 auto 1.25rem; font-size: clamp(1rem, 2vw, 1.2rem); }
 .page-hero { min-height: 340px; background: linear-gradient(135deg, #ffffff, #eef8f6); }
 .page-hero h2 { font-size: clamp(2rem, 5vw, 3.3rem); }
