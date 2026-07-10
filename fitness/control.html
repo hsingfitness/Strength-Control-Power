@@ -13,7 +13,10 @@
 </head>
 <body>
 
-<header>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
     <div class="container nav-container">
         <a class="brand" href="index.html" aria-label="Health Management home">
             <span class="brand-logo" aria-hidden="true">⌁</span>
@@ -22,15 +25,18 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html" >Assessment</a></li>
-                <li><a href="about.html">Marketplace</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="assessment.html" class="active">Assessment</a></li>
+                <li><a href="maketplace.html">Marketplace</a></li>
                 <li class="dropdown">
-                    <a href="strength.html" class="active" aria-haspopup="true" aria-expanded="false">Fitness</a>
-                    <ul class="dropdown-menu" aria-label="Fitness pages">
-                        <li><a href="strength.html">Strength</a></li>
-                        <li><a href="control.html">Control</a></li>
-                        <li><a href="power.html">Power</a></li>
-                    </ul>
+                    <a href="#">Fitness</a>
+                
+                    <div class="dropdown-menu">
+                        <a href="fitness/strength.html">Strength</a>
+                        <a href="fitness/control.html">Control</a>
+                        <a href="fitness/power.html">Power</a>
+                    </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
