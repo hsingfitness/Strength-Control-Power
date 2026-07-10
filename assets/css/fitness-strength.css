@@ -1,0 +1,46 @@
+/* ===================================
+   Fitness Control Page
+=================================== */
+
+
+.control-hero {
+    padding: 5rem 0;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eef8f6
+    );
+}
+
+
+.control-hero h1 {
+    font-size: 3rem;
+    color: var(--navy);
+}
+
+
+.control-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.5rem;
+}
+
+
+.control-card {
+    background:white;
+    padding:2rem;
+    border-radius:1rem;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+}
+
+
+.control-card h3 {
+    color:var(--brand);
+}
+
+
+.control-card:hover {
+    transform:translateY(-5px);
+}
