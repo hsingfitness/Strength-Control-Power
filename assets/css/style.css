@@ -54,7 +54,7 @@ nav li { position: relative; }
 nav a { display: inline-flex; align-items: center; justify-content: center; color: var(--ink); font-size: 0.9rem; font-weight: 700; transition: color 180ms ease; }
 nav a:hover, nav a.active { color: var(--brand); }
 .dropdown > a::after {
-    content: "⌄";
+    content: "";
     margin-left: 0.35rem;
     font-size: 0.75rem;
 }
