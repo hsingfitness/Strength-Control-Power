@@ -21,120 +21,132 @@
          HEADER
     ========================== -->
     <header>
-        <div class="container">
-            <a class="brand" href="index.html" aria-label="Fitness home">
-                <span class="brand-logo" aria-hidden="true">F</span>
-                <span class="brand-name">Fitness</span>
-            </a>
+    <div class="container nav-container">
+        <a class="brand" href="index.html" aria-label="Health Management home">
+            <span class="brand-logo" aria-hidden="true">⌁</span>
+            <span class="brand-name">Health Management</span>
+        </a>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="strength.html">Strength</a></li>
-                    <li><a href="control.html">Control</a></li>
-                    <li><a href="power.html">Power</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" class="active">Assessment</a></li>
+                <li><a href="about.html">Marketplace</a></li>
+                <li class="dropdown">
+                    <a href="strength.html" aria-haspopup="true" aria-expanded="false">Fitness</a>
+                    <ul class="dropdown-menu" aria-label="Fitness pages">
+                        <li><a href="strength.html">Strength</a></li>
+                        <li><a href="control.html">Control</a></li>
+                        <li><a href="power.html">Power</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
     <!-- =========================
          HERO
     ========================== -->
-    <section id="hero">
+    <section id="hero" class="health-hero">
         <div class="container">
-            <h2>Build Strength. Master Control. Unlock Power.</h2>
-
-            <p>
-                A science-based approach to human performance,
-                combining strength training, movement control,
-                and explosive power development.
-            </p>
-
-            <a href="strength.html" class="button">
-                Start Training
-            </a>
+            <h2>Same food. Different effects.</h2>
         </div>
     </section>
 
     <!-- =========================
-         FEATURES
+         SYSTEM FLOW
     ========================== -->
-    <section id="features">
+    <section id="system-flow">
         <div class="container">
+            <div class="flow-card">
+                <h3>AI-Powered Health Monitoring and Analysis System</h3>
 
-            <article>
-                <h3>Strength</h3>
-                <p>
-                    Build muscle, increase force production,
-                    and develop a stronger body through progressive training.
-                </p>
-                <a href="strength.html">Learn More →</a>
-            </article>
-
-            <article>
-                <h3>Control</h3>
-                <p>
-                    Improve balance, mobility, posture,
-                    coordination, and movement quality.
-                </p>
-                <a href="control.html">Learn More →</a>
-            </article>
-
-            <article>
-                <h3>Power</h3>
-                <p>
-                    Develop speed, explosiveness,
-                    and athletic performance.
-                </p>
-                <a href="power.html">Learn More →</a>
-            </article>
-
+                <div class="flow-diagram" aria-label="Health monitoring workflow">
+                    <div class="flow-stack diagnostic-stack">
+                        <span>Biometric Monitoring</span>
+                        <span>Wearable Monitoring</span>
+                        <span>Image Recognition</span>
+                    </div>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <div class="flow-column">
+                        <span class="flow-pill">Symptom Reporting</span>
+                        <span class="flow-pill flow-primary">Health Analysis</span>
+                        <span class="flow-pill">Medical Clinic</span>
+                    </div>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <div class="flow-panel">
+                        <strong>Personalized Guidance</strong>
+                        <ul>
+                            <li>Nutrition Plans</li>
+                            <li>Exercise Recommendations</li>
+                            <li>Medical Advice</li>
+                        </ul>
+                    </div>
+                    <span class="flow-arrow" aria-hidden="true">→</span>
+                    <div class="cloud-card">
+                        <span class="cloud-icon" aria-hidden="true">☁</span>
+                        <strong>Cloud Delivery</strong>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- =========================
-         ABOUT PREVIEW
+         HEALTH JOURNEY
     ========================== -->
-    <section id="about-preview">
+    <section id="journey">
         <div class="container">
+            <div class="section-heading">
+                <h2>Choose Your Health Journey</h2>
+                <p>From a quick check to a full personalized risk model — start where you are.</p>
+            </div>
 
-            <h2>About Us</h2>
+            <div class="journey-grid">
+                <article class="journey-card">
+                    <span class="badge">Guest</span>
+                    <h3>Basic Analysis</h3>
+                    <p>Try a health check instantly — no sign-up required.</p>
+                    <ul>
+                        <li>Instant symptom analysis</li>
+                        <li>AI-generated basic report</li>
+                        <li>No account needed</li>
+                        <li>One-time use</li>
+                    </ul>
+                    <a href="contact.html" class="button button-outline">Try Free Analysis</a>
+                </article>
 
-            <p>
-                Strength Control Power is dedicated to helping people
-                achieve better health and performance through evidence-based
-                training principles. Whether you're a beginner or an experienced
-                athlete, our goal is to provide practical knowledge that leads
-                to long-term results.
-            </p>
+                <article class="journey-card">
+                    <span class="badge">Member</span>
+                    <h3>History + Tracking</h3>
+                    <p>Save your results, track trends, and monitor health over time.</p>
+                    <ul>
+                        <li>All Guest features</li>
+                        <li>Save & review past reports</li>
+                        <li>Health trend tracking</li>
+                        <li>Personal health dashboard</li>
+                        <li>Member account</li>
+                    </ul>
+                    <a href="contact.html" class="button button-outline">Create Member Account</a>
+                </article>
 
-            <a href="about.html" class="button">
-                Read More
-            </a>
-
-        </div>
-    </section>
-
-    <!-- =========================
-         CALL TO ACTION
-    ========================== -->
-    <section id="cta">
-        <div class="container">
-
-            <h2>Ready to Improve?</h2>
-
-            <p>
-                Start your journey today and learn how to train smarter,
-                move better, and perform at your best.
-            </p>
-
-            <a href="contact.html" class="button">
-                Contact Us
-            </a>
-
+                <article class="journey-card featured-card">
+                    <span class="badge vip">VIP</span>
+                    <h3>Personalized Risk Model</h3>
+                    <p>Deep AI analysis tailored to your unique biology and history.</p>
+                    <ul>
+                        <li>All Member features</li>
+                        <li>Personalized risk scoring</li>
+                        <li>Deep AI health insights</li>
+                        <li>Body-specific recommendations</li>
+                        <li>Longitudinal pattern analysis</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="contact.html" class="button">Upgrade to VIP — $9.99</a>
+                </article>
+            </div>
         </div>
     </section>
 

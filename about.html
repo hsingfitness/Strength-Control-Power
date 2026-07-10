@@ -14,24 +14,30 @@
 <body>
 
 <header>
-    <div class="container">
-        <a class="brand" href="index.html" aria-label="Fitness home">
-            <span class="brand-logo" aria-hidden="true">F</span>
-            <span class="brand-name">Fitness</span>
+    <div class="container nav-container">
+        <a class="brand" href="index.html" aria-label="Health Management home">
+            <span class="brand-logo" aria-hidden="true">⌁</span>
+            <span class="brand-name">Health Management</span>
         </a>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="strength.html">Strength</a></li>
-                <li><a href="control.html">Control</a></li>
-                <li><a href="power.html">Power</a></li>
+                <li><a href="index.html" >Assessment</a></li>
+                <li><a href="about.html" class="active">Marketplace</a></li>
+                <li class="dropdown">
+                    <a href="strength.html" aria-haspopup="true" aria-expanded="false">Fitness</a>
+                    <ul class="dropdown-menu" aria-label="Fitness pages">
+                        <li><a href="strength.html">Strength</a></li>
+                        <li><a href="control.html">Control</a></li>
+                        <li><a href="power.html">Power</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
+
 
 <main>
 
