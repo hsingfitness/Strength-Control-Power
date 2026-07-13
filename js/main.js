@@ -226,6 +226,40 @@ document.addEventListener(
 
             }
         );
+   /* --------------------------------
+   Language Switch
+-------------------------------- */
+
+const languageButton = document.querySelector(".btn-language");
+const languageLinks = document.querySelectorAll(".language-menu a");
+
+if (languageButton && languageLinks.length > 0) {
+
+    languageLinks.forEach(function(link) {
+
+        link.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            // Change button text
+            languageButton.innerHTML = this.innerHTML + " ▼";
+
+            // Get selected language
+            const selectedLang = this.dataset.lang;
+
+            // Save language
+            localStorage.setItem("language", selectedLang);
+
+            console.log("Language:", selectedLang);
+
+            // Future:
+            // load language file here
+
+        });
+
+    });
+
+}
 
 
     }
