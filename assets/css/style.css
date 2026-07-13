@@ -34,60 +34,95 @@ a:hover { color: var(--brand-dark); }
 ul, ol { margin: 0 0 1rem 1.2rem; color: var(--muted); }
 li + li { margin-top: 0.35rem; }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
-    backdrop-filter: blur(12px);
+/* Header */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
 }
 
-.nav-container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 58px; }
-.brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink); }
-.brand:hover { color: var(--ink); }
-.brand-logo { color: var(--brand); font-size: 1.35rem; font-weight: 900; }
-.brand-name { font-size: 0.98rem; font-weight: 800; }
-nav ul { display: flex; align-items: center; justify-content: flex-end; gap: 1.35rem; margin: 0; list-style: none; }
-nav li { position: relative; }
-nav a { display: inline-flex; align-items: center; justify-content: center; color: var(--ink); font-size: 0.9rem; font-weight: 700; transition: color 180ms ease; }
-nav a:hover, nav a.active { color: var(--brand); }
-.dropdown {
-    position: relative;
+/* Entire row */
+
+.nav-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    width:100%;
 }
 
+/* Left logo */
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+.brand{
 
-    background: white;
-    min-width: 160px;
-    padding: 10px 0;
+    display:flex;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#222;
+
+    flex-shrink:0;
 }
 
+/* Right side */
 
-.dropdown-menu a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-left:auto;
+
+    gap:35px;
 }
 
+/* Navigation */
 
-.dropdown-menu a:hover {
-    background: #f2f2f2;
+nav ul{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
 }
 
+nav a{
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:500;
+}
+
+/* Login + Language */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
 }
 
 /* ===========================
