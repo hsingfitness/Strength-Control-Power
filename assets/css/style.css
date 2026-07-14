@@ -1090,3 +1090,188 @@ h1{
     }
 
 }
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-hero{
+    min-height:calc(100vh - 80px);
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#F7F9FC 0%,#ECFDF7 100%);
+}
+
+.login-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.login-copy .eyebrow{
+    display:inline-flex;
+    margin-bottom:18px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:#DDF8F0;
+    color:var(--brand-dark);
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-size:.8rem;
+}
+
+.login-copy h1{
+    color:var(--ink);
+    margin-bottom:20px;
+}
+
+.login-copy p{
+    max-width:560px;
+    font-size:1.15rem;
+}
+
+.login-tree{
+    margin-top:35px;
+    padding:26px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    max-width:420px;
+}
+
+.tree-root{
+    color:var(--navy);
+    font-weight:900;
+    margin-bottom:14px;
+}
+
+.login-tree ul{
+    list-style:none;
+    border-left:2px solid var(--brand);
+    margin-left:12px;
+}
+
+.login-tree li{
+    position:relative;
+    padding:8px 0 8px 28px;
+    color:var(--ink);
+    font-weight:700;
+}
+
+.login-tree li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:18px;
+    height:2px;
+    background:var(--brand);
+}
+
+.login-panel{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.role-card{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:18px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    color:var(--ink);
+    margin-bottom:14px;
+    transition:var(--transition);
+}
+
+.role-card:hover,
+.featured-role{
+    border-color:var(--brand);
+    background:#F5FFFB;
+    transform:translateY(-2px);
+}
+
+.role-icon{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:#EEF8F5;
+    font-size:1.4rem;
+}
+
+.role-card strong,
+.role-card small{
+    display:block;
+}
+
+.role-card small{
+    margin-top:4px;
+    color:var(--muted);
+    line-height:1.4;
+}
+
+.login-form{
+    margin-top:26px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+}
+
+.login-form h2{
+    font-size:1.6rem;
+    margin-bottom:18px;
+}
+
+.login-form label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--ink);
+    font-weight:700;
+}
+
+.login-form input{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-size:16px;
+}
+
+
+.login-form .button-primary{
+    width:100%;
+    border:0;
+    cursor:pointer;
+    padding:15px 22px;
+    border-radius:999px;
+    background:var(--brand);
+    color:white;
+    font-size:16px;
+    font-weight:800;
+    transition:var(--transition);
+}
+
+.login-form .button-primary:hover{
+    background:var(--brand-dark);
+    transform:translateY(-1px);
+}
+
+.login-note{
+    margin-top:14px;
+    font-size:.9rem;
+}
+
+@media(max-width:900px){
+    .login-grid{
+        grid-template-columns:1fr;
+    }
+}

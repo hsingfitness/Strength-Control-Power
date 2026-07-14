@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Log in to Health Management as a member, VIP member, doctor, or admin.">
+
+<meta name="keywords" content="health management login, member login, VIP member, doctor login, admin login">
+
+<meta name="author" content="Health Management">
+
+<title>Log In | Health Management</title>
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav-container">
+
+<a href="index.html" class="brand">
+
+<span class="brand-logo">
+
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+
+<path
+    d="M2 12h5l2-6 4 12 2-6h7"
+    stroke="#10A386"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+</svg>
+
+</span>
+
+<span class="brand-name">
+Health Management
+</span>
+
+</a>
+
+<div class="nav-right">
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="assessment.html">Assessment</a></li>
+
+<li><a href="marketplace.html">Marketplace</a></li>
+
+<li class="dropdown">
+
+<a href="#">Fitness</a>
+
+<div class="dropdown-menu">
+
+<a href="fitness/strength.html">Strength</a>
+
+<a href="fitness/control.html">Control</a>
+
+<a href="fitness/power.html">Power</a>
+
+</div>
+
+</li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="nav-actions">
+
+<a href="login.html" class="btn-login active">
+Log In
+</a>
+
+<div class="language-dropdown">
+
+<button class="btn-language">
+🌐 EN
+</button>
+
+<div class="language-menu">
+
+<a href="#">🇺🇸 English</a>
+
+<a href="#">🇨🇳 中文</a>
+
+<a href="#">🇯🇵 日本語</a>
+
+<a href="#">🇰🇷 한국어</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="login-hero">
+
+<div class="container login-grid">
+
+<div class="login-copy">
+
+<span class="eyebrow">Secure Access</span>
+
+<h1>Log In</h1>
+
+<p>
+Choose the account type that matches your Health Management role to continue to the right dashboard experience.
+</p>
+
+<div class="login-tree" aria-label="Available login roles">
+
+<div class="tree-root">Log In</div>
+
+<ul>
+
+<li>member</li>
+
+<li>VIP member</li>
+
+<li>Doctor</li>
+
+<li>Admin</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="login-panel" aria-label="Login role options">
+
+<a href="#account-login" class="role-card">
+
+<span class="role-icon">👤</span>
+
+<span>
+<strong>member</strong>
+<small>Track daily health, assessments, and personal progress.</small>
+</span>
+
+</a>
+
+<a href="#account-login" class="role-card featured-role">
+
+<span class="role-icon">⭐</span>
+
+<span>
+<strong>VIP member</strong>
+<small>Access advanced AI insights and personalized care plans.</small>
+</span>
+
+</a>
+
+<a href="#account-login" class="role-card">
+
+<span class="role-icon">🩺</span>
+
+<span>
+<strong>Doctor</strong>
+<small>Review patient insights, care notes, and health reports.</small>
+</span>
+
+</a>
+
+<a href="#account-login" class="role-card">
+
+<span class="role-icon">🛡️</span>
+
+<span>
+<strong>Admin</strong>
+<small>Manage platform users, workflows, and service settings.</small>
+</span>
+
+</a>
+
+<form class="login-form" id="account-login">
+
+<h2>Account Sign In</h2>
+
+<label for="email">Email address</label>
+<input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+<label for="password">Password</label>
+<input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+<button type="submit" class="button button-primary">Continue</button>
+
+<p class="login-note">Demo page only. Role options prepare separate dashboard entry points.</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
