@@ -3,159 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Strength Control Power - Evidence-based fitness for building strength, improving control, and maximizing power.">
-    <meta name="keywords" content="fitness, strength, control, power, training">
-    <meta name="author" content="Strength Control Power">
+    <meta name="description" content="Complete an AI-powered health assessment with questionnaires, media uploads, results, and premium upgrade options.">
+    <meta name="keywords" content="health assessment, AI assessment, health questionnaire, upload health images, upload health videos">
+    <meta name="author" content="Health Management">
 
-    <title>health management</title>
+    <title>Assessment | Health Management</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-    <header>
+<header>
     <div class="container nav-container">
-        <a class="brand" href="index.html" aria-label="Health Management home">
-            <span class="brand-logo" aria-hidden="true">⌁</span>
+        <a href="index.html" class="brand" aria-label="Health Management home">
+            <span class="brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                        d="M2 12h5l2-6 4 12 2-6h7"
+                        stroke="#10A386"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+            </span>
             <span class="brand-name">Health Management</span>
         </a>
 
-        <nav aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="assessment.html" class="active">Assessment</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li class="dropdown">
-                    <a href="#">Fitness</a>
-                
-                    <div class="dropdown-menu">
-                        <a href="fitness/strength.html">Strength</a>
-                        <a href="fitness/control.html">Control</a>
-                        <a href="fitness/power.html">Power</a>
+        <div class="nav-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="assessment.html" class="active">Assessment</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li class="dropdown">
+                        <a href="#">Fitness</a>
+                        <div class="dropdown-menu">
+                            <a href="fitness/strength.html">Strength</a>
+                            <a href="fitness/control.html">Control</a>
+                            <a href="fitness/power.html">Power</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="marketplace.html" class="btn-cart" aria-label="Shopping cart checkout">
+                    <span aria-hidden="true">🛒</span>
+                    Check Out
+                </a>
+                <a href="login.html" class="btn-login">Log In</a>
+                <div class="language-dropdown">
+                    <button class="btn-language">🌐 EN</button>
+                    <div class="language-menu">
+                        <a href="#">🇺🇸 English</a>
+                        <a href="#">🇨🇳 中文</a>
+                        <a href="#">🇯🇵 日本語</a>
+                        <a href="#">🇰🇷 한국어</a>
                     </div>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 
-
-
 <main>
-
-    <!-- Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h2>About Strength Control Power</h2>
-            <p>
-                Helping people become stronger, move better,
-                and perform at their highest potential.
-            </p>
+    <section class="assessment-hero">
+        <div class="container assessment-hero-grid">
+            <div>
+                <span class="badge">Assessment</span>
+                <h1>Start your personalized health assessment</h1>
+                <p>
+                    Complete a questionnaire, upload supporting media, and receive an AI-assisted assessment result with clear next steps.
+                </p>
+                <a href="#health-questionnaire" class="assessment-cta">Begin Assessment</a>
+            </div>
+            <div class="assessment-summary-card" aria-label="Assessment page features">
+                <h2>Assessment</h2>
+                <ul>
+                    <li>Health Questionnaire</li>
+                    <li>Upload Images</li>
+                    <li>Upload Videos</li>
+                    <li>AI Assessment</li>
+                    <li>Assessment Result</li>
+                    <li>Upgrade to Premium</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="container">
+    <section class="assessment-workflow container" aria-labelledby="assessment-workflow-title">
+        <div class="section-heading">
+            <h2 id="assessment-workflow-title">Assessment Workflow</h2>
+            <p>Follow each step to build a complete, AI-ready health profile.</p>
+        </div>
 
-        <h2>Our Mission</h2>
+        <div class="assessment-grid">
+            <article class="assessment-card" id="health-questionnaire">
+                <span class="assessment-step">01</span>
+                <h3>Health Questionnaire</h3>
+                <p>Answer guided questions about symptoms, goals, history, allergies, lifestyle, and current wellness needs.</p>
+                <a href="#upload-images">Continue</a>
+            </article>
 
-        <p>
-            Strength Control Power is built on the belief that
-            physical performance should be developed through
-            scientific principles, practical experience,
-            and continuous learning.
-        </p>
+            <article class="assessment-card" id="upload-images">
+                <span class="assessment-step">02</span>
+                <h3>Upload Images</h3>
+                <p>Add relevant images securely so the assessment can include visual context when appropriate.</p>
+                <label class="upload-control">
+                    <span>Choose Images</span>
+                    <input type="file" accept="image/*" multiple>
+                </label>
+            </article>
 
-        <p>
-            Our goal is to provide clear, evidence-based
-            education that helps people improve their health,
-            athletic performance, and quality of life.
-        </p>
+            <article class="assessment-card" id="upload-videos">
+                <span class="assessment-step">03</span>
+                <h3>Upload Videos</h3>
+                <p>Upload short videos to document movement, symptoms, meals, or other health-related observations.</p>
+                <label class="upload-control">
+                    <span>Choose Videos</span>
+                    <input type="file" accept="video/*" multiple>
+                </label>
+            </article>
 
+            <article class="assessment-card" id="ai-assessment">
+                <span class="assessment-step">04</span>
+                <h3>AI Assessment</h3>
+                <p>AI reviews your questionnaire and uploaded media to identify patterns and prepare personalized insights.</p>
+                <button type="button" class="assessment-button">Run AI Assessment</button>
+            </article>
+
+            <article class="assessment-card" id="assessment-result">
+                <span class="assessment-step">05</span>
+                <h3>Assessment Result</h3>
+                <p>View your assessment summary, risk indicators, recommended actions, and suggested follow-up steps.</p>
+                <a href="#upgrade-premium">View Result</a>
+            </article>
+
+            <article class="assessment-card premium-card" id="upgrade-premium">
+                <span class="assessment-step">06</span>
+                <h3>Upgrade to Premium</h3>
+                <p>Unlock advanced reports, saved history, deeper recommendations, and ongoing progress tracking.</p>
+                <a href="marketplace.html">Upgrade Now</a>
+            </article>
+        </div>
     </section>
-
-    <!-- Philosophy -->
-    <section class="container">
-
-        <h2>Our Philosophy</h2>
-
-        <h3>Strength</h3>
-
-        <p>
-            Strength is the foundation of movement.
-            Building strength improves daily function,
-            resilience, and athletic performance.
-        </p>
-
-        <h3>Control</h3>
-
-        <p>
-            Movement quality is as important as force.
-            Balance, mobility, coordination,
-            and stability reduce injury risk
-            while improving efficiency.
-        </p>
-
-        <h3>Power</h3>
-
-        <p>
-            Power combines strength and speed.
-            Developing explosive movement improves
-            sports performance and functional ability.
-        </p>
-
-    </section>
-
-    <!-- What We Offer -->
-    <section class="container">
-
-        <h2>What You'll Find Here</h2>
-
-        <ul>
-            <li>Evidence-based fitness education</li>
-            <li>Strength training programs</li>
-            <li>Mobility and movement guidance</li>
-            <li>Power development techniques</li>
-            <li>Exercise demonstrations</li>
-            <li>Training articles and resources</li>
-        </ul>
-
-    </section>
-
-    <!-- Vision -->
-    <section class="container">
-
-        <h2>Our Vision</h2>
-
-        <p>
-            We aim to build a community where fitness is
-            guided by knowledge instead of myths,
-            allowing people of every age and experience
-            level to train safely and effectively.
-        </p>
-
-    </section>
-
 </main>
 
 <footer>
     <div class="container">
-
-        <p>&copy; 2026 Strength Control Power. All rights reserved.</p>
-
+        <p>&copy; 2026 Health Management. All rights reserved.</p>
         <p>
             <a href="docs/privacy.html">Privacy Policy</a> |
             <a href="docs/terms.html">Terms of Service</a>
         </p>
-
     </div>
 </footer>
 
