@@ -3,162 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete an AI-powered health assessment with questionnaires, media uploads, results, and premium upgrade options.">
-    <meta name="keywords" content="health assessment, AI assessment, health questionnaire, upload health images, upload health videos">
+    <meta name="description" content="Use Guest Mode to describe your symptoms, nutrition, sleep, and reports for a free basic health analysis.">
+    <meta name="keywords" content="health assessment, guest mode, nutrition log, upload health reports, free basic analysis">
     <meta name="author" content="Health Management">
 
-    <title>Assessment | Health Management</title>
+    <title>Health Assessment | Health Management</title>
 
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="assessment-page">
 
-<header>
-    <div class="container nav-container">
-        <a href="index.html" class="brand" aria-label="Health Management home">
-            <span class="brand-logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                        d="M2 12h5l2-6 4 12 2-6h7"
-                        stroke="#10A386"
-                        stroke-width="2.2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"/>
-                </svg>
-            </span>
-            <span class="brand-name">Health Management</span>
-        </a>
+<main class="assessment-shell">
+    <a href="index.html" class="assessment-back" aria-label="Go back to home">
+        <span aria-hidden="true">←</span>
+        Home
+    </a>
 
-        <div class="nav-right">
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="assessment.html" class="active">Assessment</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li class="dropdown">
-                        <a href="#">Fitness</a>
-                        <div class="dropdown-menu">
-                            <a href="fitness/strength.html">Strength</a>
-                            <a href="fitness/control.html">Control</a>
-                            <a href="fitness/power.html">Power</a>
-                        </div>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <section class="guest-assessment" aria-labelledby="assessment-title">
+        <div class="assessment-intro">
+            <h1 id="assessment-title">Health Assessment</h1>
+            <p>You’re using Guest mode. Describe your symptoms and get an instant basic analysis — no sign-up required.</p>
+        </div>
 
-            <div class="nav-actions">
-                <a href="marketplace.html" class="btn-cart" aria-label="Shopping cart">
-                    <span aria-hidden="true">🛒</span>
-                </a>
-                <a href="login.html" class="btn-login">Log In</a>
-                <div class="language-dropdown">
-                    <button class="btn-language">🌐 EN</button>
-                    <div class="language-menu">
-                        <a href="#">🇺🇸 English</a>
-                        <a href="#">🇨🇳 中文</a>
-                        <a href="#">🇯🇵 日本語</a>
-                        <a href="#">🇰🇷 한국어</a>
-                    </div>
+        <form class="guest-assessment-form" action="#" method="post">
+            <article class="assessment-form-card">
+                <div class="assessment-card-heading">
+                    <h2>Detailed Analysis</h2>
+                    <p>Enter your condition and upload supporting documents.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-<main>
-    <section class="assessment-hero">
-        <div class="container assessment-hero-grid">
-            <div>
-                <span class="badge">Assessment</span>
-                <h1>Start your personalized health assessment</h1>
-                <p>
-                    Complete a questionnaire, upload supporting media, and receive an AI-assisted assessment result with clear next steps.
-                </p>
-                <a href="#health-questionnaire" class="assessment-cta">Begin Assessment</a>
-            </div>
-            <div class="assessment-summary-card" aria-label="Assessment page features">
-                <h2>Assessment</h2>
-                <ul>
-                    <li>Health Questionnaire</li>
-                    <li>Upload Images</li>
-                    <li>Upload Videos</li>
-                    <li>AI Assessment</li>
-                    <li>Assessment Result</li>
-                    <li>Upgrade to Premium</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="assessment-workflow container" aria-labelledby="assessment-workflow-title">
-        <div class="section-heading">
-            <h2 id="assessment-workflow-title">Assessment Workflow</h2>
-            <p>Follow each step to build a complete, AI-ready health profile.</p>
-        </div>
-
-        <div class="assessment-grid">
-            <article class="assessment-card" id="health-questionnaire">
-                <span class="assessment-step">01</span>
-                <h3>Health Questionnaire</h3>
-                <p>Answer guided questions about symptoms, goals, history, allergies, lifestyle, and current wellness needs.</p>
-                <a href="#upload-images">Continue</a>
+                <label class="sr-only" for="symptom-details">Detailed analysis</label>
+                <textarea id="symptom-details" name="symptom_details" placeholder="Please describe in detail what you are feeling, when it started, and any specific concerns..."></textarea>
             </article>
 
-            <article class="assessment-card" id="upload-images">
-                <span class="assessment-step">02</span>
-                <h3>Upload Images</h3>
-                <p>Add relevant images securely so the assessment can include visual context when appropriate.</p>
-                <label class="upload-control">
-                    <span>Choose Images</span>
-                    <input type="file" accept="image/*" multiple>
+            <article class="assessment-form-card nutrition-card">
+                <div class="assessment-card-heading">
+                    <h2>Daily Nutrition Log</h2>
+                </div>
+
+                <div class="assessment-field-group">
+                    <label for="breakfast">Breakfast (Time/Food)</label>
+                    <input id="breakfast" name="breakfast" type="text" placeholder="e.g. 8:00am — Oatmeal with berries">
+                </div>
+
+                <div class="assessment-field-group">
+                    <label for="lunch">Lunch (Time/Food)</label>
+                    <input id="lunch" name="lunch" type="text" placeholder="e.g. 12:30pm — Grilled chicken salad">
+                </div>
+
+                <div class="assessment-field-group">
+                    <label for="dinner">Dinner (Time/Food)</label>
+                    <input id="dinner" name="dinner" type="text" placeholder="e.g. 7:00pm — Salmon with vegetables">
+                </div>
+
+                <div class="assessment-field-group">
+                    <label for="sleep">Sleep &amp; Wake Time</label>
+                    <input id="sleep" name="sleep" type="text" placeholder="e.g. Sleep 11pm — Wake 7am">
+                </div>
+            </article>
+
+            <article class="assessment-form-card">
+                <div class="assessment-card-heading">
+                    <h2>Upload Reports (Optional)</h2>
+                </div>
+
+                <label class="report-upload" for="health-reports">
+                    <input id="health-reports" name="health_reports" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                    <span class="upload-icon" aria-hidden="true">⇧</span>
+                    <span class="upload-title">Click or drag to upload reports</span>
+                    <span class="upload-note">Supports PDF, JPG, PNG (Max 10MB)</span>
                 </label>
             </article>
 
-            <article class="assessment-card" id="upload-videos">
-                <span class="assessment-step">03</span>
-                <h3>Upload Videos</h3>
-                <p>Upload short videos to document movement, symptoms, meals, or other health-related observations.</p>
-                <label class="upload-control">
-                    <span>Choose Videos</span>
-                    <input type="file" accept="video/*" multiple>
-                </label>
-            </article>
-
-            <article class="assessment-card" id="ai-assessment">
-                <span class="assessment-step">04</span>
-                <h3>AI Assessment</h3>
-                <p>AI reviews your questionnaire and uploaded media to identify patterns and prepare personalized insights.</p>
-                <button type="button" class="assessment-button">Run AI Assessment</button>
-            </article>
-
-            <article class="assessment-card" id="assessment-result">
-                <span class="assessment-step">05</span>
-                <h3>Assessment Result</h3>
-                <p>View your assessment summary, risk indicators, recommended actions, and suggested follow-up steps.</p>
-                <a href="#upgrade-premium">View Result</a>
-            </article>
-
-            <article class="assessment-card premium-card" id="upgrade-premium">
-                <span class="assessment-step">06</span>
-                <h3>Upgrade to Premium</h3>
-                <p>Unlock advanced reports, saved history, deeper recommendations, and ongoing progress tracking.</p>
-                <a href="marketplace.html">Upgrade Now</a>
-            </article>
-        </div>
+            <button class="analysis-submit" type="submit">
+                <span aria-hidden="true">✦</span>
+                Get Free Basic Analysis
+            </button>
+        </form>
     </section>
 </main>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Health Management. All rights reserved.</p>
-        <p>
-            <a href="docs/privacy.html">Privacy Policy</a> |
-            <a href="docs/terms.html">Terms of Service</a>
-        </p>
-    </div>
-</footer>
 
 <script src="js/main.js"></script>
 
