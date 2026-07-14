@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Strength Control Power - Evidence-based fitness for building strength, improving control, and maximizing power.">
-    <meta name="keywords" content="fitness, strength, control, power, training">
-    <meta name="author" content="Strength Control Power">
+    <meta name="description" content="Browse optional general wellness products independent of any health assessment.">
+    <meta name="keywords" content="wellness marketplace, supplements, herbs, devices, meals">
+    <meta name="author" content="Health Management">
 
-    <title>health management</title>
+    <title>Marketplace | Health Management</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-    <header>
+<header>
     <div class="container nav-container">
         <a class="brand" href="index.html" aria-label="Health Management home">
             <span class="brand-logo" aria-hidden="true">⌁</span>
@@ -29,12 +23,11 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="assessment.html" class="active">Assessment</a></li>
-                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assessment.html">Assessment</a></li>
+                <li><a href="marketplace.html" class="active">Marketplace</a></li>
                 <li class="dropdown">
                     <a href="#">Fitness</a>
-                
                     <div class="dropdown-menu">
                         <a href="fitness/strength.html">Strength</a>
                         <a href="fitness/control.html">Control</a>
@@ -47,114 +40,89 @@
     </div>
 </header>
 
-
-<main>
-
-    <!-- Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h2>About Strength Control Power</h2>
-            <p>
-                Helping people become stronger, move better,
-                and perform at their highest potential.
-            </p>
+<main class="marketplace-page">
+    <section class="marketplace-hero">
+        <div class="container marketplace-hero__inner">
+            <span class="eyebrow">Marketplace</span>
+            <h1>Browse general wellness products</h1>
+            <p>All purchases are entirely optional and independent of any health assessment.</p>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="container">
+    <section class="marketplace-section" aria-labelledby="marketplace-products-title">
+        <div class="container marketplace-container">
+            <div class="marketplace-toolbar" aria-label="Product filters">
+                <div class="category-tabs">
+                    <button class="category-pill category-pill--active" type="button">All Products</button>
+                    <button class="category-pill" type="button"><span aria-hidden="true">💊</span> Supplements</button>
+                    <button class="category-pill" type="button"><span aria-hidden="true">🍃</span> Herbs</button>
+                    <button class="category-pill" type="button"><span aria-hidden="true">〽</span> Devices</button>
+                    <button class="category-pill" type="button"><span aria-hidden="true">🍽</span> Meals</button>
+                    <button class="category-pill" type="button"><span aria-hidden="true">♡</span> Wellness</button>
+                </div>
+                <p class="item-count">21 items</p>
+            </div>
 
-        <h2>Our Mission</h2>
+            <h2 id="marketplace-products-title" class="sr-only">Marketplace products</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <div class="product-icon" aria-hidden="true">💊</div>
+                        <div class="product-badges">
+                            <span class="badge badge--gold">Best Seller</span>
+                            <span class="badge badge--muted">Optional</span>
+                        </div>
+                    </div>
+                    <h3>Premium Omega-3 Fish Oil</h3>
+                    <p>High DHA/EPA for cognitive function and joint health.</p>
+                    <div class="product-card__footer">
+                        <strong>$28.99</strong>
+                        <button class="cart-button" type="button"><span aria-hidden="true">🛒</span> Add to Cart</button>
+                    </div>
+                </article>
 
-        <p>
-            Strength Control Power is built on the belief that
-            physical performance should be developed through
-            scientific principles, practical experience,
-            and continuous learning.
-        </p>
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <div class="product-icon" aria-hidden="true">💊</div>
+                        <div class="product-badges">
+                            <span class="badge badge--muted">Optional</span>
+                        </div>
+                    </div>
+                    <h3>Vitamin D3 5000 IU</h3>
+                    <p>Enhanced absorption formula for bone and immune support.</p>
+                    <div class="product-card__footer">
+                        <strong>$18.99</strong>
+                        <button class="cart-button" type="button"><span aria-hidden="true">🛒</span> Add to Cart</button>
+                    </div>
+                </article>
 
-        <p>
-            Our goal is to provide clear, evidence-based
-            education that helps people improve their health,
-            athletic performance, and quality of life.
-        </p>
-
+                <article class="product-card">
+                    <div class="product-card__top">
+                        <div class="product-icon" aria-hidden="true">💊</div>
+                        <div class="product-badges">
+                            <span class="badge badge--purple">Popular</span>
+                            <span class="badge badge--muted">Optional</span>
+                        </div>
+                    </div>
+                    <h3>Zinc + Selenium Complex</h3>
+                    <p>Advanced immune system support formula.</p>
+                    <div class="product-card__footer">
+                        <strong>$22.99</strong>
+                        <button class="cart-button" type="button"><span aria-hidden="true">🛒</span> Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
-
-    <!-- Philosophy -->
-    <section class="container">
-
-        <h2>Our Philosophy</h2>
-
-        <h3>Strength</h3>
-
-        <p>
-            Strength is the foundation of movement.
-            Building strength improves daily function,
-            resilience, and athletic performance.
-        </p>
-
-        <h3>Control</h3>
-
-        <p>
-            Movement quality is as important as force.
-            Balance, mobility, coordination,
-            and stability reduce injury risk
-            while improving efficiency.
-        </p>
-
-        <h3>Power</h3>
-
-        <p>
-            Power combines strength and speed.
-            Developing explosive movement improves
-            sports performance and functional ability.
-        </p>
-
-    </section>
-
-    <!-- What We Offer -->
-    <section class="container">
-
-        <h2>What You'll Find Here</h2>
-
-        <ul>
-            <li>Evidence-based fitness education</li>
-            <li>Strength training programs</li>
-            <li>Mobility and movement guidance</li>
-            <li>Power development techniques</li>
-            <li>Exercise demonstrations</li>
-            <li>Training articles and resources</li>
-        </ul>
-
-    </section>
-
-    <!-- Vision -->
-    <section class="container">
-
-        <h2>Our Vision</h2>
-
-        <p>
-            We aim to build a community where fitness is
-            guided by knowledge instead of myths,
-            allowing people of every age and experience
-            level to train safely and effectively.
-        </p>
-
-    </section>
-
 </main>
 
 <footer>
     <div class="container">
-
-        <p>&copy; 2026 Strength Control Power. All rights reserved.</p>
-
+        <p>&copy; 2026 Health Management. All rights reserved.</p>
         <p>
             <a href="docs/privacy.html">Privacy Policy</a> |
             <a href="docs/terms.html">Terms of Service</a>
         </p>
-
     </div>
 </footer>
 
