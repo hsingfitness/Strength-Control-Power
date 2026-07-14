@@ -482,19 +482,19 @@ section{
 
 
 /* ===============================
-   3. AI PROCESS FLOW
+   AI SYSTEM FLOW
 =============================== */
 
-
-#system-flow{
+#system-flow {
 
     background:#F7F9FC;
 
 }
 
 
+/* Main card */
 
-.flow-card{
+.flow-card {
 
     background:white;
 
@@ -504,11 +504,12 @@ section{
 
     box-shadow:var(--shadow);
 
+    overflow:hidden;
+
 }
 
 
-
-.flow-card h3{
+.flow-card h3 {
 
     text-align:center;
 
@@ -519,8 +520,9 @@ section{
 }
 
 
+/* Flow layout */
 
-.flow-diagram{
+.flow-diagram {
 
     display:flex;
 
@@ -528,7 +530,7 @@ section{
 
     align-items:center;
 
-    gap:30px;
+    gap:25px;
 
     flex-wrap:wrap;
 
@@ -536,7 +538,9 @@ section{
 
 
 
-.flow-stack{
+/* Left stack */
+
+.flow-stack {
 
     width:190px;
 
@@ -552,11 +556,12 @@ section{
 
     border-radius:18px;
 
+    box-sizing:border-box;
+
 }
 
 
-
-.flow-stack span{
+.flow-stack span {
 
     padding:15px;
 
@@ -571,8 +576,9 @@ section{
 }
 
 
+/* Arrow */
 
-.flow-arrow{
+.flow-arrow {
 
     font-size:35px;
 
@@ -582,7 +588,9 @@ section{
 
 
 
-.flow-column{
+/* Middle column */
+
+.flow-column {
 
     display:flex;
 
@@ -594,7 +602,7 @@ section{
 
 
 
-.flow-pill{
+.flow-pill {
 
     width:180px;
 
@@ -608,11 +616,12 @@ section{
 
     font-weight:700;
 
+    box-sizing:border-box;
+
 }
 
 
-
-.flow-primary{
+.flow-primary {
 
     background:var(--brand);
 
@@ -622,7 +631,9 @@ section{
 
 
 
-.flow-panel{
+/* Right panel */
+
+.flow-panel {
 
     width:260px;
 
@@ -634,19 +645,21 @@ section{
 
     border:1px solid var(--line);
 
+    box-sizing:border-box;
+
 }
 
 
-
-.flow-panel ul{
+.flow-panel ul {
 
     list-style:none;
 
+    padding:0;
+
 }
 
 
-
-.flow-panel li{
+.flow-panel li {
 
     margin:12px 0;
 
@@ -655,8 +668,7 @@ section{
 }
 
 
-
-.flow-panel li::before{
+.flow-panel li::before {
 
     content:"✓";
 
@@ -668,11 +680,15 @@ section{
 
 
 
-.cloud-card{
+/* Cloud */
+
+.cloud-card {
 
     width:130px;
 
-    height:200px;
+    min-height:160px;
+
+    padding:20px;
 
     background:var(--navy);
 
@@ -688,16 +704,11 @@ section{
 
     align-items:center;
 
-}
+    text-align:center;
 
-
-
-.cloud-icon{
-
-    font-size:40px;
+    box-sizing:border-box;
 
 }
-
 
 
 
