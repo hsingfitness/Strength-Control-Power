@@ -337,6 +337,10 @@ nav a.active{
 
 .btn-cart{
 
+    width:46px;
+
+    padding:0;
+
     border:1px solid var(--brand);
 
     color:var(--brand);
