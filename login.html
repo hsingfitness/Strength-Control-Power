@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in or create a Health Management account to access personalized AI health insights.">
+    <meta name="keywords" content="Health Management login, health dashboard, AI nutrition account">
+    <meta name="author" content="Health Management">
+    <title>Login | Health Management</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <a href="index.html" class="brand">
+            <span class="brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                        d="M2 12h5l2-6 4 12 2-6h7"
+                        stroke="#10A386"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span class="brand-name">Health Management</span>
+        </a>
+
+        <div class="nav-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="assessment.html">Assessment</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li class="dropdown">
+                        <a href="#">Fitness</a>
+                        <div class="dropdown-menu">
+                            <a href="fitness/strength.html">Strength</a>
+                            <a href="fitness/control.html">Control</a>
+                            <a href="fitness/power.html">Power</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn-login active">Log In</a>
+                <div class="language-dropdown">
+                    <button class="btn-language">🌐 EN</button>
+                    <div class="language-menu">
+                        <a href="#" data-lang="en">🇺🇸 English</a>
+                        <a href="#" data-lang="zh">🇨🇳 中文</a>
+                        <a href="#" data-lang="ja">🇯🇵 日本語</a>
+                        <a href="#" data-lang="ko">🇰🇷 한국어</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="auth-page">
+        <div class="container auth-grid">
+            <div class="auth-copy">
+                <span class="badge">Member Access</span>
+                <h1>Continue your personalized health journey.</h1>
+                <p>
+                    Sign in to review your AI health reports, track trends, and keep your
+                    nutrition and fitness recommendations connected in one secure dashboard.
+                </p>
+
+                <div class="auth-benefits">
+                    <div>
+                        <strong>Health Timeline</strong>
+                        <span>Monitor changes after every assessment.</span>
+                    </div>
+                    <div>
+                        <strong>Personalized Plans</strong>
+                        <span>Keep nutrition and exercise guidance in sync.</span>
+                    </div>
+                    <div>
+                        <strong>Private by Design</strong>
+                        <span>Account access is structured for protected health data.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-card" aria-label="Login form">
+                <div class="auth-tabs" aria-label="Account options">
+                    <a href="login.html" class="active">Log In</a>
+                    <a href="#create-account">Create Account</a>
+                </div>
+
+                <form class="auth-form">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+
+                    <div class="auth-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+                        <a href="#reset-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-submit">Log In</button>
+                </form>
+
+                <div class="auth-divider"><span>or continue with</span></div>
+
+                <div class="social-login">
+                    <button type="button">Google</button>
+                    <button type="button">Apple</button>
+                </div>
+
+                <p class="auth-note" id="create-account">
+                    New to Health Management?
+                    <a href="assessment.html">Start a free assessment</a> and save your results after completion.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Health Management. All Rights Reserved.</p>
+        <p>
+            <a href="docs/privacy.html">Privacy Policy</a>
+            &nbsp;|&nbsp;
+            <a href="docs/terms.html">Terms of Service</a>
+            &nbsp;|&nbsp;
+            <a href="docs/disclaimer.html">Disclaimer</a>
+        </p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
