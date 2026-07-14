@@ -314,11 +314,12 @@ nav a.active{
 
 
 
+.btn-cart,
 .btn-login{
 
     height:46px;
 
-    padding:0 28px;
+    padding:0 24px;
 
     display:flex;
 
@@ -326,13 +327,35 @@ nav a.active{
 
     justify-content:center;
 
+    gap:8px;
+
     border-radius:999px;
+
+    font-weight:700;
+
+}
+
+.btn-cart{
+
+    border:1px solid var(--brand);
+
+    color:var(--brand);
+
+    background:white;
+
+}
+
+.btn-cart:hover{
+
+    background:#F5FAF8;
+
+}
+
+.btn-login{
 
     background:var(--brand);
 
     color:white;
-
-    font-weight:700;
 
 }
 
@@ -942,6 +965,7 @@ h1{
 }
 
 
+.btn-cart,
 .btn-login,
 .btn-language{
 
