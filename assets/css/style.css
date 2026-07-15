@@ -1580,9 +1580,9 @@ h1{
 
 .assessment-shell{
     width:100%;
-    max-width:760px;
+    max-width:1200px;
     margin:0 auto;
-    padding:16px 24px 48px;
+    padding:16px 28px 48px;
 }
 
 .assessment-back{
@@ -1600,6 +1600,7 @@ h1{
 }
 
 .guest-assessment{
+    max-width:760px;
     padding:0;
 }
 
