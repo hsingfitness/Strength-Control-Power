@@ -2019,3 +2019,40 @@ h1{
         padding:26px;
     }
 }
+
+/* ==========================
+   GOOGLE FORM TWO COLUMNS
+========================== */
+
+
+.google-form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+}
+
+
+.form-column {
+
+    width: 100%;
+
+}
+
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+
+
+    .google-form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+}
