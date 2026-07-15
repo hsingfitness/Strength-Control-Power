@@ -1,0 +1,1174 @@
+index.html
+│
+├── Header / Navigation
+│      ├── Logo
+│      ├── Menu
+│      ├── Shopping Cart
+│      ├── Login
+│      └── Language Selector
+│
+├── Hero Section
+│      ├── Headline
+│      ├── Description
+│      ├── CTA
+│      ├── Features
+│      └── Illustration
+│
+├── How It Works
+│      ├── Five animated process cards
+│      ├── Icons
+│      ├── Connecting arrows
+│      └── Supporting illustrations
+│
+├── Choose Your Journey
+│      ├── Guest
+│      ├── Member
+│      └── VIP
+│
+└── Footer
+       ├── Logo
+       ├── Quick Links
+       ├── Social Icons
+       └── Copyright
+
+
+
+
+index.html
+│
+├── Header
+│     ├── Logo
+│     ├── Navigation
+│     ├── Shopping Cart
+│     ├── Login
+│     └── Language Selector
+│
+├── Hero
+│
+├── How It Works
+│
+├── Choose Your Journey
+│
+├── Footer
+│
+└── Back-to-top Button
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Management Platform</title>
+
+    <meta name="description"
+        content="AI-powered personalized nutrition and health management platform.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ======================================================
+HEADER
+====================================================== -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <!-- Logo -->
+
+        <a href="#" class="logo">
+
+            <img src="assets/logo.svg" alt="Health Management">
+
+            <span>
+
+                Health<br>
+                Management
+
+            </span>
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="navbar">
+
+            <ul>
+
+                <li><a class="active" href="#">Home</a></li>
+
+                <li><a href="#">Assessment</a></li>
+
+                <li><a href="#">Marketplace</a></li>
+
+                <li><a href="#">Fitness</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Right Buttons -->
+
+        <div class="nav-actions">
+
+            <button class="icon-btn">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+            </button>
+
+            <button class="login-btn">
+
+                <i class="fa-regular fa-user"></i>
+
+                Login
+
+            </button>
+
+            <button class="language-btn">
+
+                <i class="fa-solid fa-globe"></i>
+
+                EN
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ======================================================
+MAIN
+====================================================== -->
+
+<main>
+
+<!-- ======================================================
+HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <!-- Left -->
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+
+                AI Powered Personalized Health
+
+            </span>
+
+            <h1>
+
+                Same Food.<br>
+
+                Different Effects.
+
+            </h1>
+
+            <p>
+
+                AI analyzes your biology to deliver personalized nutrition,
+                health insights, disease risk prediction,
+                and lifestyle recommendations that evolve with you.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn-primary">
+
+                    Start Free Analysis
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+            <!-- Features -->
+
+            <div class="hero-features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-shield-heart"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Secure & Private</h4>
+
+                        <p>Encrypted health data</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>AI Powered</h4>
+
+                        <p>Advanced algorithms</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Evidence Based</h4>
+
+                        <p>Backed by science</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="hero-image">
+
+            <img src="assets/hero.png"
+                 alt="AI Health Platform">
+
+            <!-- Floating Card 1 -->
+
+            <div class="floating-card card-health">
+
+                <h4>Health Score</h4>
+
+                <div class="score">
+
+                    89
+
+                </div>
+
+                <p>Excellent</p>
+
+            </div>
+
+            <!-- Floating Card 2 -->
+
+            <div class="floating-card card-risk">
+
+                <h4>Risk Level</h4>
+
+                <span class="low-risk">
+
+                    Low Risk
+
+                </span>
+
+            </div>
+
+            <!-- Floating Card 3 -->
+
+            <div class="floating-card card-stats">
+
+                <div>
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    72 bpm
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-shoe-prints"></i>
+
+                    8,245
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-moon"></i>
+
+                    7.2 hrs
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================================
+HOW IT WORKS
+PART 2 STARTS HERE
+====================================================== -->
+  <!-- ======================================================
+HOW IT WORKS
+====================================================== -->
+
+<section id="how-it-works">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                AI Health Journey
+
+            </span>
+
+            <h2>
+
+                How It Works
+
+            </h2>
+
+            <p>
+
+                From collecting your health information to receiving
+                personalized recommendations, our AI continuously learns
+                and improves your health journey.
+
+            </p>
+
+        </div>
+
+        <div class="workflow">
+
+            <!-- STEP 1 -->
+
+            <article class="workflow-card">
+
+                <div class="step-number">
+
+                    01
+
+                </div>
+
+                <div class="workflow-icon">
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                </div>
+
+                <h3>
+
+                    Share Your Health Data
+
+                </h3>
+
+                <p>
+
+                    Complete a short assessment,
+                    connect wearable devices,
+                    upload meal photos,
+                    or enter your medical history.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-check"></i> Health questionnaire</li>
+
+                    <li><i class="fa-solid fa-check"></i> Wearable integration</li>
+
+                    <li><i class="fa-solid fa-check"></i> Image recognition</li>
+
+                </ul>
+
+            </article>
+
+            <div class="workflow-arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <!-- STEP 2 -->
+
+            <article class="workflow-card">
+
+                <div class="step-number">
+
+                    02
+
+                </div>
+
+                <div class="workflow-icon">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                </div>
+
+                <h3>
+
+                    AI Analysis
+
+                </h3>
+
+                <p>
+
+                    AI combines nutrition,
+                    lifestyle,
+                    wearable data,
+                    and medical information
+                    into one intelligent analysis.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-check"></i> Nutrition analysis</li>
+
+                    <li><i class="fa-solid fa-check"></i> Health risk prediction</li>
+
+                    <li><i class="fa-solid fa-check"></i> Pattern recognition</li>
+
+                </ul>
+
+            </article>
+
+            <div class="workflow-arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <!-- STEP 3 -->
+
+            <article class="workflow-card">
+
+                <div class="step-number">
+
+                    03
+
+                </div>
+
+                <div class="workflow-icon">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                </div>
+
+                <h3>
+
+                    Personalized Health Report
+
+                </h3>
+
+                <p>
+
+                    Receive an easy-to-understand report
+                    with scores,
+                    trends,
+                    nutrient balance,
+                    and health risks.
+
+                </p>
+
+                <div class="mini-report">
+
+                    <div>
+
+                        <strong>89</strong>
+
+                        <span>Health Score</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>92</strong>
+
+                        <span>Nutrition</span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Low</strong>
+
+                        <span>Risk</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <div class="workflow-arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <!-- STEP 4 -->
+
+            <article class="workflow-card">
+
+                <div class="step-number">
+
+                    04
+
+                </div>
+
+                <div class="workflow-icon">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                </div>
+
+                <h3>
+
+                    Personalized Action Plan
+
+                </h3>
+
+                <p>
+
+                    AI creates a customized
+                    nutrition,
+                    exercise,
+                    and lifestyle program
+                    based on your goals.
+
+                </p>
+
+                <ul>
+
+                    <li><i class="fa-solid fa-apple-whole"></i> Nutrition plan</li>
+
+                    <li><i class="fa-solid fa-dumbbell"></i> Exercise plan</li>
+
+                    <li><i class="fa-solid fa-bed"></i> Sleep improvement</li>
+
+                </ul>
+
+            </article>
+
+            <div class="workflow-arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <!-- STEP 5 -->
+
+            <article class="workflow-card">
+
+                <div class="step-number">
+
+                    05
+
+                </div>
+
+                <div class="workflow-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <h3>
+
+                    Track & Improve
+
+                </h3>
+
+                <p>
+
+                    Your dashboard continuously
+                    monitors your progress,
+                    updates recommendations,
+                    and adapts as your health changes.
+
+                </p>
+
+                <div class="progress-box">
+
+                    <div class="progress-value">
+
+                        +15%
+
+                    </div>
+
+                    <span>
+
+                        Improvement in the last 30 days
+
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================================
+CHOOSE YOUR JOURNEY
+PART 3 STARTS HERE
+====================================================== -->
+  <!-- ======================================================
+CHOOSE YOUR JOURNEY
+====================================================== -->
+
+<section id="journey">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Flexible Plans
+            </span>
+
+            <h2>
+                Choose Your Health Journey
+            </h2>
+
+            <p>
+                Start free today and upgrade anytime as your health journey grows.
+            </p>
+
+        </div>
+
+        <div class="journey-grid">
+
+            <!-- =======================================
+            FREE
+            ======================================== -->
+
+            <article class="journey-card">
+
+                <div class="plan-icon">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </div>
+
+                <h3>
+
+                    Guest
+
+                </h3>
+
+                <p class="plan-price">
+
+                    Free
+
+                </p>
+
+                <p class="plan-description">
+
+                    Perfect for first-time visitors who want a quick AI health assessment.
+
+                </p>
+
+                <ul class="plan-features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        AI Health Assessment
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Nutrition Score
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Health Report
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Recommendations
+                    </li>
+
+                </ul>
+
+                <a href="#" class="plan-button">
+
+                    Start Free
+
+                </a>
+
+            </article>
+
+            <!-- =======================================
+            MEMBER
+            ======================================== -->
+
+            <article class="journey-card featured">
+
+                <div class="popular-tag">
+
+                    MOST POPULAR
+
+                </div>
+
+                <div class="plan-icon">
+
+                    <i class="fa-solid fa-user-group"></i>
+
+                </div>
+
+                <h3>
+
+                    Member
+
+                </h3>
+
+                <p class="plan-price">
+
+                    $9
+
+                    <span>/month</span>
+
+                </p>
+
+                <p class="plan-description">
+
+                    Continuous tracking with AI-powered health insights and progress reports.
+
+                </p>
+
+                <ul class="plan-features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Everything in Guest
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Unlimited Reports
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Health History
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Wearable Device Sync
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Progress Dashboard
+                    </li>
+
+                </ul>
+
+                <a href="#" class="plan-button primary">
+
+                    Become a Member
+
+                </a>
+
+            </article>
+
+            <!-- =======================================
+            PREMIUM
+            ======================================== -->
+
+            <article class="journey-card">
+
+                <div class="plan-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+                <h3>
+
+                    Premium
+
+                </h3>
+
+                <p class="plan-price">
+
+                    $29
+
+                    <span>/month</span>
+
+                </p>
+
+                <p class="plan-description">
+
+                    Complete AI health management with personalized coaching and predictive analysis.
+
+                </p>
+
+                <ul class="plan-features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Everything in Member
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        AI Risk Prediction
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Meal Planning
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Exercise Planning
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Smart Supplement Advice
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Priority Support
+                    </li>
+
+                </ul>
+
+                <a href="#" class="plan-button">
+
+                    Upgrade Now
+
+                </a>
+
+            </article>
+
+        </div>
+
+        <!-- =======================================
+        PLATFORM FEATURES
+        ======================================== -->
+
+        <div class="journey-highlights">
+
+            <div class="highlight">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <h4>Privacy First</h4>
+
+                <p>
+                    Your health information is encrypted and securely protected.
+                </p>
+
+            </div>
+
+            <div class="highlight">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h4>Advanced AI</h4>
+
+                <p>
+                    Personalized recommendations powered by intelligent health analysis.
+                </p>
+
+            </div>
+
+            <div class="highlight">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h4>Continuous Progress</h4>
+
+                <p>
+                    Monitor improvements with real-time health tracking and reports.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================================
+FOOTER
+PART 4 STARTS HERE
+====================================================== -->
+  <!-- ======================================================
+FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <!-- Company -->
+
+            <div class="footer-column">
+
+                <a href="#" class="footer-logo">
+
+                    <img src="assets/logo.svg"
+                         alt="Health Management">
+
+                    <span>
+
+                        Health<br>
+                        Management
+
+                    </span>
+
+                </a>
+
+                <p>
+
+                    AI-powered personalized health management
+                    helping people make smarter nutrition,
+                    fitness and lifestyle decisions.
+
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h4>
+
+                    Quick Links
+
+                </h4>
+
+                <ul>
+
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">Assessment</a></li>
+
+                    <li><a href="#">Marketplace</a></li>
+
+                    <li><a href="#">Fitness</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Legal -->
+
+            <div class="footer-column">
+
+                <h4>
+
+                    Support
+
+                </h4>
+
+                <ul>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                    <li><a href="#">Terms of Service</a></li>
+
+                    <li><a href="#">Help Center</a></li>
+
+                    <li><a href="#">FAQ</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Social -->
+
+            <div class="footer-column">
+
+                <h4>
+
+                    Follow Us
+
+                </h4>
+
+                <div class="social-icons">
+
+                    <a href="#">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 Health Management Platform.
+                All rights reserved.
+
+            </p>
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+
+                    Privacy
+
+                </a>
+
+                <a href="#">
+
+                    Terms
+
+                </a>
+
+                <a href="#">
+
+                    Cookies
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ======================================================
+BACK TO TOP
+====================================================== -->
+
+<button id="backToTop">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ======================================================
+JAVASCRIPT
+====================================================== -->
+
+<script>
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+
+        backToTop.classList.add("show");
+
+    }else{
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+backToTop.addEventListener("click", ()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+</script>
+
+</main>
+
+</body>
+
+</html>
+  
