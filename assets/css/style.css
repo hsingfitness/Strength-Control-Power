@@ -2025,35 +2025,84 @@ h1{
 ========================== */
 
 
-.google-form-grid {
+.contact-container{
 
-    display: grid;
-    background:red;
+display:grid;
 
-    grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr 1.1fr;
 
-    gap: 30px;
+gap:40px;
+
+max-width:1100px;
+
+margin:auto;
+
+padding:60px 20px;
+
+background:#f7f8fb;
 
 }
 
 
-.form-column {
 
-    width: 100%;
+.contact-info,
+.google-form{
+
+background:white;
+
+padding:35px;
+
+border-radius:12px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.08);
 
 }
 
 
-/* Mobile responsive */
 
-@media (max-width: 768px) {
+.contact-info h1{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
 
 
-    .google-form-grid {
 
-        grid-template-columns: 1fr;
+.contact-info p{
 
-    }
+color:#555;
 
+line-height:1.7;
+
+}
+
+
+
+.contact-info h3{
+
+margin-top:35px;
+
+}
+
+
+
+.contact-info li{
+
+margin-bottom:10px;
+
+}
+
+
+
+.google-form iframe{
+
+width:100%;
+
+height:850px;
+
+border:none;
 
 }
