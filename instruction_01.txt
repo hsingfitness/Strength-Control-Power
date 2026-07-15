@@ -16,4 +16,13 @@
        ↓
 8. 正式部署
 
-你不需要一开始买服务器。用 GitHub + Render + Supabase + ChatGPT 就可以做出一个完整 SaaS 网站
+你不需要一开始买服务器。用 GitHub + Render + Supabase + ChatGPT 就可以做出一个完整 SaaS 网站.
+
+
+GitHub Pages= 前台店面
+
+Render= 店员 + 后台办公室
+
+Supabase= 文件柜
+
+Stripe= 收银系统
