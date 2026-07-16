@@ -2496,3 +2496,159 @@ border:none;
         transform: none;
     }
 }
+
+/* ===============================
+   PROCESS / FLOWCHART SECTION
+=============================== */
+
+.process-section {
+    padding: 70px 0;
+    background: #F7FAFC;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.compact-heading {
+    margin-bottom: 40px;
+}
+
+.compact-heading h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy);
+}
+
+.process-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.process-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.process-col--center {
+    justify-content: center;
+}
+
+.process-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 30px 16px 16px;
+    position: relative;
+    border: 1.5px solid var(--navy);
+    border-radius: 14px;
+    background: white;
+}
+
+.process-group__label {
+    position: absolute;
+    top: -14px;
+    left: 14px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--navy);
+    color: white;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.process-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 190px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: white;
+    color: var(--ink);
+    font-size: .85rem;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(17,24,39,.04);
+}
+
+.process-node__icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.process-node--standalone {
+    background: #EFF3F9;
+}
+
+.process-node--analysis {
+    justify-content: center;
+    text-align: center;
+    border: 1.5px solid var(--brand);
+    background: #ECFDF7;
+    color: var(--brand-dark);
+    font-size: .95rem;
+}
+
+.process-node--guidance {
+    flex-direction: column;
+    align-items: flex-start;
+    background: #F3F0FF;
+    border-color: #D9CFFB;
+}
+
+.process-node--guidance ul {
+    margin-top: 8px;
+    padding-left: 18px;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.process-node--guidance li {
+    margin-top: 4px;
+}
+
+.process-node--cloud {
+    justify-content: center;
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+    font-size: .95rem;
+}
+
+.process-node--clinic {
+    background: white;
+}
+
+.process-arrow {
+    color: #94A3B8;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.process-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 26px;
+}
+
+.process-branch__arrow {
+    color: #94A3B8;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+@media(max-width:1100px){
+    .process-diagram {
+        flex-direction: column;
+    }
+
+    .process-arrow {
+        transform: rotate(90deg);
+    }
+}
