@@ -2710,184 +2710,25 @@ border:none;
     color: var(--navy);
 }
 
-.process-grid {
-    display: grid;
-    grid-template-columns: 230px 40px 200px 40px 210px 40px 180px;
-    grid-template-rows: auto 40px auto 40px auto;
-    align-items: center;
-    justify-items: stretch;
+.process-image-wrap {
     max-width: 1000px;
     margin: 0 auto;
-}
-
-.pg-bio {
-    grid-column: 1 / 2;
-    grid-row: 1 / 4;
-    align-self: stretch;
-}
-
-.pg-medtest {
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-}
-
-.pg-symptom {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-}
-
-.pg-health {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-}
-
-.pg-clinic {
-    grid-column: 3 / 4;
-    grid-row: 5 / 6;
-}
-
-.pg-guidance {
-    grid-column: 5 / 6;
-    grid-row: 3 / 4;
-    align-self: center;
-}
-
-.pg-cloud {
-    grid-column: 7 / 8;
-    grid-row: 3 / 4;
-    align-self: center;
-}
-
-.pg-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #94A3B8;
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.pg-arrow--right { font-size: 1.6rem; }
-.pg-arrow--down,
-.pg-arrow--updown { font-size: 1.3rem; }
-
-.pg-arrow-bio-medtest { grid-column: 1 / 2; grid-row: 4 / 5; }
-.pg-arrow-bio-health { grid-column: 2 / 3; grid-row: 3 / 4; }
-.pg-arrow-medtest-clinic { grid-column: 2 / 3; grid-row: 5 / 6; }
-.pg-arrow-symptom-health { grid-column: 3 / 4; grid-row: 2 / 3; }
-.pg-arrow-health-clinic { grid-column: 3 / 4; grid-row: 4 / 5; }
-.pg-arrow-health-guidance { grid-column: 4 / 5; grid-row: 3 / 4; }
-.pg-arrow-guidance-cloud { grid-column: 6 / 7; grid-row: 3 / 4; }
-
-.process-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 100%;
-    padding: 30px 16px 16px;
-    position: relative;
-    border: 1.5px solid var(--navy);
-    border-radius: 14px;
-    background: #EEF3FA;
-    justify-content: space-evenly;
-}
-
-.process-group__label {
-    position: absolute;
-    top: -14px;
-    left: 14px;
-    padding: 4px 12px;
-    border-radius: 999px;
-    background: var(--navy);
-    color: white;
-    font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: .02em;
-    white-space: nowrap;
-}
-
-.process-node {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 12px 14px;
+    padding: 24px 28px;
+    background: white;
     border: 1px solid var(--line);
-    border-radius: 10px;
-    background: white;
-    color: var(--ink);
-    font-size: .82rem;
-    font-weight: 700;
-    box-shadow: 0 2px 6px rgba(17,24,39,.04);
-    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(17,24,39,.05);
 }
 
-.process-node__icon {
-    font-size: 1rem;
-    line-height: 1;
-}
-
-.process-node--standalone {
-    background: #EFF3F9;
-}
-
-.process-node--analysis {
-    flex-direction: column;
-    gap: 4px;
-    border: 1.5px solid var(--brand);
-    background: #ECFDF7;
-    color: var(--brand-dark);
-    font-size: .92rem;
-}
-
-.process-node--guidance {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    background: #F3F0FF;
-    border-color: #D9CFFB;
-}
-
-.process-node--guidance ul {
-    margin-top: 8px;
-    padding-left: 18px;
-    font-weight: 600;
-    color: #4B5563;
-}
-
-.process-node--guidance li {
-    margin-top: 4px;
-}
-
-.process-node--cloud {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: white;
-    font-size: .92rem;
-}
-
-.process-node--clinic {
-    background: white;
+.process-image-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 @media(max-width:1050px){
-    .process-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-        gap: 14px;
-        max-width: 380px;
-    }
-
-    .pg-bio, .pg-medtest, .pg-symptom, .pg-health, .pg-clinic, .pg-guidance, .pg-cloud {
-        grid-column: 1 / 2;
-        grid-row: auto;
-    }
-
-    .pg-arrow {
-        grid-column: 1 / 2;
-        grid-row: auto;
-        transform: rotate(90deg);
+    .process-image-wrap {
+        padding: 18px;
     }
 }
 
