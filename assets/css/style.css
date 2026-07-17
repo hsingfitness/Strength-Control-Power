@@ -508,7 +508,7 @@ nav a.active{
 
 section{
 
-    padding:80px 0;
+    padding:96px 0;
 
 }
 
@@ -2316,9 +2316,8 @@ border:none;
 .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(560px, 1.05fr);
-    gap: 40px;
+    gap: 56px;
     align-items: center;
-    min-height: calc(100vh - 80px);
 }
 
 .hero-tag,
@@ -2389,7 +2388,9 @@ border:none;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
-    margin-top: 44px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
 }
 
 .feature {
@@ -2430,12 +2431,25 @@ border:none;
     justify-content: center;
 }
 
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    inset: -6%;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(16, 163, 134, .16), transparent 55%),
+        radial-gradient(circle at 78% 70%, rgba(32, 57, 95, .10), transparent 50%);
+    filter: blur(6px);
+    z-index: 0;
+}
+
 .hero-visual__image {
+    position: relative;
+    z-index: 1;
     width: 100%;
-    max-width: 570px;
+    max-width: 620px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 20px 40px rgba(18,38,63,.12));
+    filter: drop-shadow(0 20px 40px rgba(18,38,63,.14));
 }
 
 @media(max-width:1100px){
@@ -2456,7 +2470,7 @@ border:none;
 =============================== */
 
 .process-section {
-    padding: 70px 0;
+    padding: 96px 0;
     background: #F7FAFC;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
