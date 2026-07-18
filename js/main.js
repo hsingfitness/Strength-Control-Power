@@ -130,22 +130,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    /* --------------------------------
-       Language Switch
-    -------------------------------- */
-    const languageButton = document.querySelector(".btn-language");
-    const languageLinks = document.querySelectorAll(".language-menu a");
-
-    if (languageButton && languageLinks.length > 0) {
-        languageLinks.forEach(function (link) {
-            link.addEventListener("click", function (event) {
-                event.preventDefault();
-                languageButton.innerHTML = this.innerHTML + " ▼";
-
-                const selectedLang = this.dataset.lang || this.textContent.trim();
-                localStorage.setItem("language", selectedLang);
-            });
-        });
-    }
 });
