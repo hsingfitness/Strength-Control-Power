@@ -7,13 +7,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Log in to Health Management as a member, VIP member, doctor, or admin.">
-
-<meta name="keywords" content="health management login, member login, VIP member, doctor login, admin login">
+<meta name="description" content="Create your Health Management account to save your health history, track progress, and get personalized AI insights.">
 
 <meta name="author" content="Health Management">
 
-<title>Log In | Health Management</title>
+<title>Sign Up | Health Management</title>
 
 <link rel="icon" href="favicon.ico">
 
@@ -87,7 +85,7 @@ Health Management
 <div class="nav-actions">
 
 <span id="nav-auth-slot">
-<a href="login.html" class="btn-login active">
+<a href="login.html" class="btn-login">
 Log In
 </a>
 </span>
@@ -126,24 +124,30 @@ Log In
 
 <div class="container login-grid login-grid--single">
 
-<div class="login-panel" aria-label="Sign in">
+<div class="login-panel" aria-label="Sign up">
 
-<form class="login-form" id="login-form" novalidate>
+<form class="login-form" id="signup-form" novalidate>
 
-<h2>Account Sign In</h2>
+<h2>Create Account</h2>
 
 <p class="form-error" hidden></p>
+
+<label for="name">Full name</label>
+<input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
 
 <label for="email">Email address</label>
 <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
 
 <label for="password">Password</label>
-<input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+<input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
 
-<button type="submit" class="button button-primary">Log In</button>
+<label for="confirm">Confirm password</label>
+<input type="password" id="confirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" minlength="8" required>
+
+<button type="submit" class="button button-primary">Sign Up</button>
 
 <p class="login-note">
-Don't have an account? <a href="signup.html">Sign Up</a>
+Already have an account? <a href="login.html">Log In</a>
 </p>
 
 </form>
@@ -159,6 +163,7 @@ Don't have an account? <a href="signup.html">Sign Up</a>
 <script src="js/stripe-links.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/auth.js"></script>
+
 <script src="js/main.js"></script>
 
 </body>
