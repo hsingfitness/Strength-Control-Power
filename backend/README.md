@@ -12,6 +12,9 @@ added as separate routers as they're built.
 | POST   | `/api/auth/signup` | no           | Create an account, returns a token   |
 | POST   | `/api/auth/login`  | no           | Log in, returns a token              |
 | GET    | `/api/auth/me`     | yes (Bearer) | Return the current user              |
+| POST   | `/api/payments/create-checkout-session` | optional | Create a Stripe Checkout Session for the cart; returns a `checkout_url` to redirect to. Works for guests too — attaches the order to the logged-in user if a token is sent. |
+| POST   | `/api/payments/webhook` | no (Stripe-signed) | Stripe calls this when a payment completes; marks the matching order as `paid`. |
+| GET    | `/api/payments/orders` | yes (Bearer) | List the current user's past orders. |
 
 `signup` and `login` both return:
 ```json
@@ -49,6 +52,26 @@ useful for testing signup/login without touching the frontend at all.
      (it calls `Base.metadata.create_all` in `main.py`), **or**
    - Paste `schema.sql` into the Supabase SQL Editor and run it yourself.
 4. Set `DATABASE_URL` as an environment variable wherever you deploy.
+
+## Setting up Stripe
+
+1. Create a Stripe account, grab your **secret key** from the Stripe Dashboard
+   (Developers → API keys). Set it as `STRIPE_SECRET_KEY`.
+2. Once deployed, register a webhook endpoint in the Stripe Dashboard
+   pointing at `https://your-api.onrender.com/api/payments/webhook`,
+   listening for the `checkout.session.completed` event. Stripe will give
+   you a signing secret — set that as `STRIPE_WEBHOOK_SECRET`.
+3. Set `FRONTEND_ORIGINS` to your real site URL (not `*`) — the checkout
+   success/cancel redirect URLs are built from the first origin in that
+   list.
+
+The frontend's cart drawer currently checks out via per-product **Stripe
+Payment Links** (`js/stripe-links.js`), configured with no backend needed.
+This API adds a second option — a single combined Checkout Session for the
+whole cart — which is generally the better experience for multi-item
+orders. Swapping the cart's checkout button to call
+`POST /api/payments/create-checkout-session` instead of (or in addition to)
+the Payment Links flow is a frontend change, not yet wired up.
 
 ## Deploying to Render
 

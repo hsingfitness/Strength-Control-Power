@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, String, DateTime, Numeric, JSON, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 
 from .database import Base, engine
@@ -18,6 +18,12 @@ def uuid_column():
     return Column(String(36), primary_key=True, default=_uuid_default)
 
 
+def fk_user_column():
+    if engine.dialect.name == "postgresql":
+        return Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=True)
+    return Column(String(36), ForeignKey("users.id"), nullable=True)
+
+
 class User(Base):
     __tablename__ = "users"
 
@@ -25,4 +31,17 @@ class User(Base):
     name = Column(String(120), nullable=False)
     email = Column(String(255), unique=True, index=True, nullable=False)
     password_hash = Column(String(255), nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Order(Base):
+    __tablename__ = "orders"
+
+    id = uuid_column()
+    user_id = fk_user_column()
+    items = Column(JSON, nullable=False)  # [{id, name, price, qty}]
+    amount_total = Column(Numeric(10, 2), nullable=False)
+    currency = Column(String(10), default="usd")
+    stripe_session_id = Column(String(255), unique=True, nullable=True)
+    status = Column(String(20), default="pending")  # pending -> paid | canceled
     created_at = Column(DateTime, default=datetime.utcnow)
