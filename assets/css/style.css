@@ -1612,6 +1612,96 @@ h1{
     }
 }
 
+.form-error {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #FDECEC;
+    border: 1px solid #F5C2C2;
+    color: #B42318;
+    font-size: .88rem;
+    font-weight: 700;
+}
+
+.form-error[hidden] {
+    display: none;
+}
+
+/* ---- Account menu (logged-in state, replaces Log In button) ---- */
+
+.account-menu {
+    position: relative;
+}
+
+.btn-account {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px 8px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: white;
+    color: var(--ink);
+    font-weight: 800;
+    font-size: .88rem;
+    cursor: pointer;
+}
+
+.btn-account__avatar {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--brand);
+    color: white;
+    font-size: .78rem;
+    font-weight: 900;
+}
+
+.account-menu__dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    min-width: 190px;
+    padding: 8px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    z-index: 20;
+}
+
+.account-menu:hover .account-menu__dropdown,
+.account-menu:focus-within .account-menu__dropdown {
+    display: block;
+}
+
+.account-menu__dropdown a,
+.account-menu__dropdown button {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border: 0;
+    background: none;
+    border-radius: 8px;
+    text-align: left;
+    font-size: .86rem;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.account-menu__dropdown a:hover,
+.account-menu__dropdown button:hover {
+    background: #F3F6FA;
+}
+
+.account-menu__dropdown #logout-btn {
+    color: #B42318;
+}
+
 /* ===============================
    ASSESSMENT PAGE
 =============================== */
