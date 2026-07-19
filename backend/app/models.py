@@ -45,3 +45,13 @@ class Order(Base):
     stripe_session_id = Column(String(255), unique=True, nullable=True)
     status = Column(String(20), default="pending")  # pending -> paid | canceled
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Report(Base):
+    __tablename__ = "reports"
+
+    id = uuid_column()
+    user_id = fk_user_column()  # nullable: guests can generate reports too, just can't retrieve history
+    input = Column(JSON, nullable=False)  # {symptom_details, breakfast, lunch, dinner, sleep}
+    output = Column(JSON, nullable=False)  # {summary, risk_level, recommendations, disclaimer}
+    created_at = Column(DateTime, default=datetime.utcnow)

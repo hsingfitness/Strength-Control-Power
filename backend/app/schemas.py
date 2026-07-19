@@ -52,3 +52,20 @@ class OrderOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class ReportRequest(BaseModel):
+    symptom_details: str = Field(min_length=1, max_length=4000)
+    breakfast: str = Field(default="", max_length=300)
+    lunch: str = Field(default="", max_length=300)
+    dinner: str = Field(default="", max_length=300)
+    sleep: str = Field(default="", max_length=300)
+
+
+class ReportOut(BaseModel):
+    id: str
+    summary: str
+    risk_level: str
+    recommendations: list[str]
+    disclaimer: str
+    created_at: datetime

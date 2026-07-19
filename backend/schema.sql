@@ -28,6 +28,18 @@ create index if not exists idx_orders_user_id on orders (user_id);
 
 alter table orders enable row level security;
 
+create table if not exists reports (
+    id uuid primary key default uuid_generate_v4(),
+    user_id uuid references users(id),
+    input jsonb not null,
+    output jsonb not null,
+    created_at timestamp default now()
+);
+
+create index if not exists idx_reports_user_id on reports (user_id);
+
+alter table reports enable row level security;
+
 -- The backend connects with the Postgres role directly (not through
 -- Supabase's client libraries), so Row Level Security is not required for
 -- this table to function — but it's good practice to enable it and lock
