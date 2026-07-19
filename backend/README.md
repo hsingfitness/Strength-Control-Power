@@ -75,6 +75,11 @@ the Payment Links flow is a frontend change, not yet wired up.
 
 ## Deploying to Render
 
+The simplest path is the manual one below. (There's also a `render.yaml` in
+this folder for Render's Blueprint flow, if you'd rather point Render at
+that directly — Render's Blueprint UI lets you specify a custom file path,
+in which case use `backend/render.yaml`.)
+
 1. Push this repo to GitHub (already done — this folder is `backend/` inside
    the same repo as the frontend).
 2. In Render: **New → Web Service → connect this GitHub repo**.
