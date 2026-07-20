@@ -3024,3 +3024,58 @@ body.cart-open {
         width: 100vw;
     }
 }
+
+/* ===============================
+   ASSESSMENT RESULT PANEL
+=============================== */
+
+.assessment-result {
+    margin-top: 24px;
+    border: 1.5px solid var(--brand);
+    background: #F3FBF8;
+}
+
+.assessment-result__risk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0;
+    font-size: .95rem;
+}
+
+.assessment-result__risk span {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.assessment-result__risk strong {
+    color: var(--brand-dark);
+    font-size: 1.1rem;
+}
+
+.assessment-result__summary {
+    margin-bottom: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+}
+
+.assessment-result__recs span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: .85rem;
+}
+
+.assessment-result__recs ul {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.assessment-result__disclaimer {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: .78rem;
+    color: var(--muted);
+}

@@ -140,7 +140,9 @@
             <p>You’re using Guest mode. Describe your symptoms and get an instant basic analysis — no sign-up required.</p>
         </div>
 
-        <form class="guest-assessment-form" action="#" method="post">
+        <form class="guest-assessment-form" id="assessment-form" action="#" method="post">
+            <p id="assessment-error" class="form-error" hidden></p>
+
             <article class="assessment-form-card">
                 <div class="assessment-card-heading">
                     <h2>Detailed Analysis</h2>
@@ -190,17 +192,39 @@
                 </label>
             </article>
 
-            <button class="analysis-submit" type="submit">
+            <button class="analysis-submit" type="submit" id="analysis-submit-btn">
                 <span aria-hidden="true">✦</span>
                 Get Free Basic Analysis
             </button>
         </form>
+
+        <article class="assessment-form-card assessment-result" id="assessment-result" hidden>
+            <div class="assessment-card-heading">
+                <h2>Your Basic Analysis</h2>
+                <p>Generated from what you described. Not a medical diagnosis.</p>
+            </div>
+
+            <div class="assessment-result__risk">
+                <span>Risk Level</span>
+                <strong id="result-risk-level"></strong>
+            </div>
+
+            <p id="result-summary" class="assessment-result__summary"></p>
+
+            <div class="assessment-result__recs">
+                <span>Recommendations</span>
+                <ul id="result-recommendations"></ul>
+            </div>
+
+            <p id="result-disclaimer" class="assessment-result__disclaimer"></p>
+        </article>
     </section>
 </main>
 
 <script src="js/stripe-links.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/assessment.js"></script>
 <script src="js/i18n/translations.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>

@@ -55,7 +55,7 @@ window.I18N = {
         "journey.card2.li1": "健康时间线",
         "journey.card2.li2": "趋势分析",
         "journey.card2.li3": "进度追踪",
-        "journey.card2.cta": "创建账户",
+        "journey.card2.cta": "一次性付费 — $20",
 
         "journey.card3.badge": "VIP",
         "journey.card3.title": "个性化风险模型",
@@ -65,7 +65,7 @@ window.I18N = {
         "journey.card3.li3": "运动规划",
         "journey.card3.li4": "健康监测",
         "journey.card3.li5": "优先支持",
-        "journey.card3.cta": "升级 — $9.99"
+        "journey.card3.cta": "$10"
     },
 
     ja: {
@@ -117,7 +117,7 @@ window.I18N = {
         "journey.card2.li1": "健康タイムライン",
         "journey.card2.li2": "トレンド分析",
         "journey.card2.li3": "進捗トラッキング",
-        "journey.card2.cta": "アカウント作成",
+        "journey.card2.cta": "一回限り — $20",
 
         "journey.card3.badge": "VIP",
         "journey.card3.title": "パーソナライズドリスクモデル",
@@ -127,7 +127,7 @@ window.I18N = {
         "journey.card3.li3": "運動プランニング",
         "journey.card3.li4": "健康モニタリング",
         "journey.card3.li5": "優先サポート",
-        "journey.card3.cta": "アップグレード — $9.99"
+        "journey.card3.cta": "$10"
     },
 
     ko: {
@@ -179,7 +179,7 @@ window.I18N = {
         "journey.card2.li1": "건강 타임라인",
         "journey.card2.li2": "추세 분석",
         "journey.card2.li3": "진행 상황 추적",
-        "journey.card2.cta": "계정 만들기",
+        "journey.card2.cta": "일회성 — $20",
 
         "journey.card3.badge": "VIP",
         "journey.card3.title": "맞춤형 위험 모델",
@@ -189,6 +189,6 @@ window.I18N = {
         "journey.card3.li3": "운동 계획",
         "journey.card3.li4": "건강 모니터링",
         "journey.card3.li5": "우선 지원",
-        "journey.card3.cta": "업그레이드 — $9.99"
+        "journey.card3.cta": "$10"
     }
 };

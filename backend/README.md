@@ -15,6 +15,8 @@ added as separate routers as they're built.
 | POST   | `/api/payments/create-checkout-session` | optional | Create a Stripe Checkout Session for the cart; returns a `checkout_url` to redirect to. Works for guests too — attaches the order to the logged-in user if a token is sent. |
 | POST   | `/api/payments/webhook` | no (Stripe-signed) | Stripe calls this when a payment completes; marks the matching order as `paid`. |
 | GET    | `/api/payments/orders` | yes (Bearer) | List the current user's past orders. |
+| POST   | `/api/reports/generate` | optional | Generate an AI basic health report from the assessment form (via Google Gemini). Saves to history if logged in. |
+| GET    | `/api/reports` | yes (Bearer) | List the current user's past reports. |
 
 `signup` and `login` both return:
 ```json
@@ -74,6 +76,11 @@ orders. Swapping the cart's checkout button to call
 the Payment Links flow is a frontend change, not yet wired up.
 
 ## Deploying to Render
+
+The simplest path is the manual one below. (There's also a `render.yaml` in
+this folder for Render's Blueprint flow, if you'd rather point Render at
+that directly — Render's Blueprint UI lets you specify a custom file path,
+in which case use `backend/render.yaml`.)
 
 1. Push this repo to GitHub (already done — this folder is `backend/` inside
    the same repo as the frontend).

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .config import settings
 from .database import Base, engine
-from .routers import auth, payments
+from .routers import auth, payments, reports
 
 # Creates tables if they don't exist yet. Fine for this project's current size;
 # swap for Alembic migrations later if the schema grows.
@@ -27,6 +27,7 @@ app.add_middleware(
 
 app.include_router(auth.router, prefix="/api")
 app.include_router(payments.router, prefix="/api")
+app.include_router(reports.router, prefix="/api")
 
 
 @app.get("/")
