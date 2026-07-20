@@ -22,8 +22,8 @@ class Settings:
     STRIPE_SECRET_KEY: str = os.getenv("STRIPE_SECRET_KEY", "")
     STRIPE_WEBHOOK_SECRET: str = os.getenv("STRIPE_WEBHOOK_SECRET", "")
 
-    # Anthropic (used for AI-generated health reports)
-    ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
+    # Google Gemini (used for AI-generated health reports — free tier)
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 
 
 settings = Settings()

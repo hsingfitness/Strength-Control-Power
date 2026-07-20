@@ -15,6 +15,8 @@ added as separate routers as they're built.
 | POST   | `/api/payments/create-checkout-session` | optional | Create a Stripe Checkout Session for the cart; returns a `checkout_url` to redirect to. Works for guests too — attaches the order to the logged-in user if a token is sent. |
 | POST   | `/api/payments/webhook` | no (Stripe-signed) | Stripe calls this when a payment completes; marks the matching order as `paid`. |
 | GET    | `/api/payments/orders` | yes (Bearer) | List the current user's past orders. |
+| POST   | `/api/reports/generate` | optional | Generate an AI basic health report from the assessment form (via Google Gemini). Saves to history if logged in. |
+| GET    | `/api/reports` | yes (Bearer) | List the current user's past reports. |
 
 `signup` and `login` both return:
 ```json

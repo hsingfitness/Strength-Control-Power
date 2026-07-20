@@ -11,7 +11,7 @@ already built and tested — this is account setup + a few clicks, not code.
 | Backend API (`backend/`)        | ✅ Built and tested locally. ⬜ Not deployed yet.                |
 | Database                        | ⬜ No Supabase project created yet.                              |
 | Stripe (combined checkout)      | ⬜ No Stripe keys set. (Note: the site's cart *already* works today via a separate, simpler method — per-product Stripe Payment Links in `js/stripe-links.js`. This backend's combined-cart checkout is an upgrade path, not a blocker.) |
-| AI health reports                | ⬜ No Anthropic API key set.                                     |
+| AI health reports                | ⬜ No Gemini API key set.                                        |
 
 So the only thing standing between "code complete" and "fully live" is
 deploying `backend/` and filling in a handful of API keys. About 15–20
@@ -40,7 +40,7 @@ you want Row Level Security locked down for production.)
    - `DATABASE_URL` — the Supabase connection string from Step 1
    - `JWT_SECRET` — run `openssl rand -hex 32` locally and paste the output
    - `FRONTEND_ORIGINS` — `https://hsingfitness.github.io`
-   - `ANTHROPIC_API_KEY` — from [console.anthropic.com](https://console.anthropic.com) (needed for AI health reports)
+   - `GEMINI_API_KEY` — from [Google AI Studio](https://ai.google.dev) → Get API Key (free tier, no card needed — used for AI health reports)
    - `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` — see Step 3 (optional — skip for now if you just want login/reports working first)
 6. Deploy. You'll get a URL like `https://health-management-api.onrender.com`.
 7. Visit `https://health-management-api.onrender.com/` — you should see

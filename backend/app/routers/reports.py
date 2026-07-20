@@ -1,7 +1,9 @@
 import json
 
-import anthropic
 from fastapi import APIRouter, Depends, HTTPException, status
+from google import genai
+from google.genai import types
+from google.genai import errors as genai_errors
 from sqlalchemy.orm import Session
 
 from ..config import settings
@@ -21,14 +23,22 @@ as if confirmed. You may mention general possibilities in cautious, non-alarming
 - Always recommend seeing a healthcare professional for anything concerning.
 - Base recommendations only on general wellness knowledge (nutrition, sleep, hydration, activity).
 - Keep it supportive and plain-language, not clinical jargon.
-
-Respond ONLY with a JSON object (no markdown, no code fences) matching exactly:
-{
-  "summary": "2-4 sentence plain-language summary of what they described",
-  "risk_level": "Low" | "Moderate" | "See a doctor soon",
-  "recommendations": ["short actionable tip", "short actionable tip", "short actionable tip"]
-}
 """
+
+RESPONSE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "summary": {"type": "string", "description": "2-4 sentence plain-language summary"},
+        "risk_level": {"type": "string", "enum": ["Low", "Moderate", "See a doctor soon"]},
+        "recommendations": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 3,
+            "maxItems": 5,
+        },
+    },
+    "required": ["summary", "risk_level", "recommendations"],
+}
 
 
 def _build_user_message(payload: ReportRequest) -> str:
@@ -47,24 +57,26 @@ def generate_report(
     db: Session = Depends(get_db),
     current_user: User | None = Depends(get_current_user_optional),
 ):
-    if not settings.ANTHROPIC_API_KEY:
+    if not settings.GEMINI_API_KEY:
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="AI report generation isn't configured yet. Set ANTHROPIC_API_KEY on the server.",
+            detail="AI report generation isn't configured yet. Set GEMINI_API_KEY on the server.",
         )
 
-    client = anthropic.Anthropic(api_key=settings.ANTHROPIC_API_KEY)
+    client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
     try:
-        message = client.messages.create(
-            model="claude-sonnet-5",
-            max_tokens=600,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": _build_user_message(payload)}],
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=_build_user_message(payload),
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                response_mime_type="application/json",
+                response_schema=RESPONSE_SCHEMA,
+            ),
         )
-        raw_text = "".join(block.text for block in message.content if block.type == "text")
-        parsed = json.loads(raw_text)
-    except (anthropic.APIError, json.JSONDecodeError, KeyError) as e:
+        parsed = json.loads(response.text)
+    except (genai_errors.APIError, json.JSONDecodeError, KeyError) as e:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
             detail=f"Couldn't generate a report right now: {e}",
