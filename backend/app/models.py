@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import Column, String, DateTime, Numeric, JSON, ForeignKey
+from sqlalchemy import Column, String, DateTime, Numeric, JSON, ForeignKey, Boolean, Integer
 from sqlalchemy.dialects.postgresql import UUID
 
 from .database import Base, engine
@@ -31,7 +31,29 @@ class User(Base):
     name = Column(String(120), nullable=False)
     email = Column(String(255), unique=True, index=True, nullable=False)
     password_hash = Column(String(255), nullable=False)
+    # "user" (default) | "operator" | "super_admin"
+    role = Column(String(20), nullable=False, default="user")
+    # Granular grants for operators, e.g. {"manage_products": true}.
+    # super_admin ignores this and always has full access.
+    permissions = Column(JSON, nullable=False, default=dict)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Product(Base):
+    __tablename__ = "products"
+
+    id = Column(String(80), primary_key=True)  # human-readable slug, e.g. "omega-3-fish-oil"
+    name = Column(String(200), nullable=False)
+    description = Column(String(500), nullable=False, default="")
+    price = Column(Numeric(10, 2), nullable=False)
+    category = Column(String(40), nullable=False, default="supplements")
+    icon = Column(String(10), nullable=False, default="💊")
+    badges = Column(JSON, nullable=False, default=list)  # e.g. ["Best Seller", "Optional"]
+    stripe_payment_link = Column(String(500), nullable=True)
+    is_active = Column(Boolean, nullable=False, default=True)
+    sort_order = Column(Integer, nullable=False, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
 class Order(Base):

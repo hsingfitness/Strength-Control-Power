@@ -2,12 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import settings
-from .database import Base, engine
-from .routers import auth, payments, reports
+from .database import Base, SessionLocal, engine
+from .routers import admin, auth, payments, products, reports
+from .seed import seed_products
 
 # Creates tables if they don't exist yet. Fine for this project's current size;
 # swap for Alembic migrations later if the schema grows.
 Base.metadata.create_all(bind=engine)
+
+with SessionLocal() as _db:
+    seed_products(_db)
 
 app = FastAPI(title="Health Management API")
 
@@ -28,6 +32,8 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/api")
 app.include_router(payments.router, prefix="/api")
 app.include_router(reports.router, prefix="/api")
+app.include_router(products.router, prefix="/api")
+app.include_router(admin.router, prefix="/api")
 
 
 @app.get("/")

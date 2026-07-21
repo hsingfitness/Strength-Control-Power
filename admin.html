@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin dashboard for Health Management: manage marketplace products and operator permissions.">
+<meta name="author" content="Health Management">
+
+<title>Admin Dashboard | Health Management</title>
+
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+<div class="container nav-container">
+
+<a href="index.html" class="brand">
+    <span class="brand-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M2 12h5l2-6 4 12 2-6h7" stroke="#10A386" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </span>
+    <span class="brand-name">Health Management</span>
+</a>
+
+<div class="nav-right">
+    <nav>
+        <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="assessment.html" data-i18n="nav.assessment">Assessment</a></li>
+            <li><a href="marketplace.html" data-i18n="nav.marketplace">Marketplace</a></li>
+            <li class="dropdown">
+                <a href="#" data-i18n="nav.fitness">Fitness</a>
+                <div class="dropdown-menu">
+                    <a href="fitness/strength.html" data-i18n="nav.strength">Strength</a>
+                    <a href="fitness/control.html" data-i18n="nav.control">Control</a>
+                    <a href="fitness/power.html" data-i18n="nav.power">Power</a>
+                </div>
+            </li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-actions">
+        <span id="nav-auth-slot"></span>
+    </div>
+</div>
+
+</div>
+</header>
+
+<main class="admin-page">
+    <div class="container">
+
+        <div class="admin-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p id="admin-role-line" class="admin-role-line"></p>
+            </div>
+        </div>
+
+        <p id="admin-denied" class="admin-denied" hidden>
+            You don't have access to this page.
+            <a href="index.html">Go back home</a>.
+        </p>
+
+        <div id="admin-content" hidden>
+
+            <div class="admin-tabs" role="tablist">
+                <button type="button" class="admin-tab is-active" data-tab="products" role="tab">Products</button>
+                <button type="button" class="admin-tab" data-tab="operators" role="tab" id="operators-tab-btn" hidden>Operators</button>
+            </div>
+
+            <!-- ============ PRODUCTS TAB ============ -->
+            <section id="tab-products" class="admin-panel">
+
+                <div id="products-denied" class="admin-denied" hidden>
+                    You don't have permission to manage products. Ask a super admin to grant you the
+                    <strong>Manage Products</strong> permission.
+                </div>
+
+                <div id="products-manager" hidden>
+
+                    <form id="product-form" class="admin-form" novalidate>
+                        <h2 id="product-form-title">Add a Product</h2>
+                        <p class="form-error" hidden></p>
+
+                        <input type="hidden" id="product-edit-id" value="">
+
+                        <div class="admin-form__grid">
+                            <div>
+                                <label for="product-id">Product ID (slug, lowercase-with-dashes)</label>
+                                <input type="text" id="product-id" placeholder="e.g. vitamin-c-1000mg" required>
+                            </div>
+                            <div>
+                                <label for="product-name">Name</label>
+                                <input type="text" id="product-name" placeholder="e.g. Vitamin C 1000mg" required>
+                            </div>
+                            <div>
+                                <label for="product-price">Price (USD)</label>
+                                <input type="number" id="product-price" min="0.01" step="0.01" placeholder="19.99" required>
+                            </div>
+                            <div>
+                                <label for="product-category">Category</label>
+                                <select id="product-category">
+                                    <option value="supplements">Supplements</option>
+                                    <option value="herbs">Herbs</option>
+                                    <option value="devices">Devices</option>
+                                    <option value="meals">Meals</option>
+                                    <option value="wellness">Wellness</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="product-icon">Icon (emoji)</label>
+                                <input type="text" id="product-icon" placeholder="💊" maxlength="4">
+                            </div>
+                            <div>
+                                <label for="product-badges">Badges (comma-separated)</label>
+                                <input type="text" id="product-badges" placeholder="Best Seller, Optional">
+                            </div>
+                            <div class="admin-form__span2">
+                                <label for="product-description">Description</label>
+                                <input type="text" id="product-description" placeholder="Short product description" maxlength="500">
+                            </div>
+                            <div class="admin-form__span2">
+                                <label for="product-stripe-link">Stripe Payment Link (optional)</label>
+                                <input type="url" id="product-stripe-link" placeholder="https://buy.stripe.com/...">
+                            </div>
+                            <div class="admin-form__checkbox">
+                                <label>
+                                    <input type="checkbox" id="product-active" checked>
+                                    Active (visible on the marketplace)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__actions">
+                            <button type="submit" class="button button-primary" id="product-submit-btn">Add Product</button>
+                            <button type="button" class="button button-outline" id="product-cancel-edit" hidden>Cancel</button>
+                        </div>
+                    </form>
+
+                    <div class="admin-table-wrap">
+                        <table class="admin-table" id="products-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-tbody">
+                                <tr><td colspan="5" class="admin-table__loading">Loading products…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ============ OPERATORS TAB (super admin only) ============ -->
+            <section id="tab-operators" class="admin-panel" hidden>
+
+                <form id="operator-form" class="admin-form" novalidate>
+                    <h2>Add an Operator</h2>
+                    <p class="form-error" hidden></p>
+
+                    <div class="admin-form__grid">
+                        <div>
+                            <label for="operator-name">Name</label>
+                            <input type="text" id="operator-name" required>
+                        </div>
+                        <div>
+                            <label for="operator-email">Email</label>
+                            <input type="email" id="operator-email" required>
+                        </div>
+                        <div>
+                            <label for="operator-password">Temporary password</label>
+                            <input type="password" id="operator-password" minlength="8" required>
+                        </div>
+                        <div class="admin-form__checkbox">
+                            <label>
+                                <input type="checkbox" id="operator-perm-manage-products">
+                                Can manage marketplace products
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="admin-form__actions">
+                        <button type="submit" class="button button-primary">Add Operator</button>
+                    </div>
+                </form>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="operators-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Manage Products</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="operators-tbody">
+                            <tr><td colspan="5" class="admin-table__loading">Loading operators…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+</main>
+
+<script src="js/stripe-links.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/i18n/translations.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -207,6 +207,7 @@ function renderNavAuth() {
 
     const user = getUser() || {};
     const initial = (user.name || user.email || "?").charAt(0).toUpperCase();
+    const isAdmin = user.role === "super_admin" || user.role === "operator";
 
     slot.innerHTML = `
         <div class="account-menu">
@@ -217,6 +218,7 @@ function renderNavAuth() {
             <div class="account-menu__dropdown">
                 <a href="${rootPath("assessment.html")}">My Assessments</a>
                 <a href="${rootPath("marketplace.html")}">My Orders</a>
+                ${isAdmin ? `<a href="${rootPath("admin.html")}">Admin Dashboard</a>` : ""}
                 <button type="button" id="logout-btn">Log Out</button>
             </div>
         </div>

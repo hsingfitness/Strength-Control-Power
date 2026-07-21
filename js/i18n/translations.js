@@ -19,6 +19,7 @@ window.I18N = {
         "nav.account": "账户",
         "nav.myAssessments": "我的评估",
         "nav.myOrders": "我的订单",
+        "nav.admin": "管理后台",
         "nav.logout": "退出登录",
 
         "footer.copyright": "© 2026 Health Management。保留所有权利。",
@@ -81,6 +82,7 @@ window.I18N = {
         "nav.account": "アカウント",
         "nav.myAssessments": "マイ評価",
         "nav.myOrders": "マイ注文",
+        "nav.admin": "管理ダッシュボード",
         "nav.logout": "ログアウト",
 
         "footer.copyright": "© 2026 Health Management. 無断複写・転載を禁じます。",
@@ -143,6 +145,7 @@ window.I18N = {
         "nav.account": "계정",
         "nav.myAssessments": "내 평가",
         "nav.myOrders": "내 주문",
+        "nav.admin": "관리자 대시보드",
         "nav.logout": "로그아웃",
 
         "footer.copyright": "© 2026 Health Management. 모든 권리 보유.",

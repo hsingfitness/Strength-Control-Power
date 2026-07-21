@@ -200,6 +200,10 @@
         if (links[1] && dict["nav.myOrders"] && links[1].textContent !== dict["nav.myOrders"]) {
             links[1].textContent = dict["nav.myOrders"];
         }
+        var adminLink = slot.querySelector(".account-menu__dropdown a[href$='admin.html']");
+        if (adminLink && dict["nav.admin"] && adminLink.textContent !== dict["nav.admin"]) {
+            adminLink.textContent = dict["nav.admin"];
+        }
 
         var logoutBtn = slot.querySelector("#logout-btn");
         if (logoutBtn && dict["nav.logout"] && logoutBtn.textContent !== dict["nav.logout"]) {

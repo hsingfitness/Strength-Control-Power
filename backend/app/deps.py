@@ -39,3 +39,34 @@ def get_current_user_optional(
         return None
 
     return db.query(User).filter(User.id == user_id).first()
+
+
+def require_role(*roles: str):
+    """Dependency factory: only allow users whose role is in `roles`."""
+
+    def _check(current_user: User = Depends(get_current_user)) -> User:
+        if current_user.role not in roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You don't have permission to do that.",
+            )
+        return current_user
+
+    return _check
+
+
+def require_permission(permission: str):
+    """Dependency factory: allow super_admin always, or an operator who has
+    been explicitly granted this permission by a super_admin."""
+
+    def _check(current_user: User = Depends(get_current_user)) -> User:
+        if current_user.role == "super_admin":
+            return current_user
+        if current_user.role == "operator" and (current_user.permissions or {}).get(permission):
+            return current_user
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You don't have permission to do that.",
+        )
+
+    return _check
