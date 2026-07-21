@@ -75,7 +75,11 @@ async function apiRequest(path, options = {}) {
     }
 
     if (!response.ok) {
-        throw new Error((data && data.detail) || "Something went wrong. Please try again.");
+        const detail = data && data.detail;
+        throw new Error(
+            detail ||
+            "Can't reach the server right now. The backend may not be deployed yet — please try again later."
+        );
     }
 
     return data;
