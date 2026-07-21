@@ -65,7 +65,7 @@ window.I18N = {
         "journey.card3.li3": "运动规划",
         "journey.card3.li4": "健康监测",
         "journey.card3.li5": "优先支持",
-        "journey.card3.cta": "$10"
+        "journey.card3.cta": "升级 — $9.99"
     },
 
     ja: {
@@ -127,7 +127,7 @@ window.I18N = {
         "journey.card3.li3": "運動プランニング",
         "journey.card3.li4": "健康モニタリング",
         "journey.card3.li5": "優先サポート",
-        "journey.card3.cta": "$10"
+        "journey.card3.cta": "アップグレード — $9.99"
     },
 
     ko: {
@@ -189,6 +189,6 @@ window.I18N = {
         "journey.card3.li3": "운동 계획",
         "journey.card3.li4": "건강 모니터링",
         "journey.card3.li5": "우선 지원",
-        "journey.card3.cta": "$10"
+        "journey.card3.cta": "업그레이드 — $9.99"
     }
 };
