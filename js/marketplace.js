@@ -57,11 +57,14 @@
         if (el) el.textContent = n + (n === 1 ? " item" : " items");
     }
 
-    function wireCategoryFilters(products) {
+    function wireCategoryFilters() {
         const pills = document.querySelectorAll(".category-pill");
         if (!pills.length) return;
 
         pills.forEach((pill) => {
+            if (pill._filterBound) return;
+            pill._filterBound = true;
+
             pill.addEventListener("click", () => {
                 pills.forEach((p) => p.classList.remove("category-pill--active"));
                 pill.classList.add("category-pill--active");
@@ -84,6 +87,8 @@
     }
 
     async function loadProducts() {
+        wireCategoryFilters();
+
         const grid = document.querySelector(".product-grid");
         if (!grid || typeof API_BASE === "undefined") return;
 
@@ -100,7 +105,7 @@
 
         grid.innerHTML = products.map(renderCard).join("");
         updateItemCount(products.length);
-        wireCategoryFilters(products);
+        wireCategoryFilters();
 
         if (window.HMCart && typeof window.HMCart.rebind === "function") {
             window.HMCart.rebind();
