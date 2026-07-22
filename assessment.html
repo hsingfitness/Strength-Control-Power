@@ -140,6 +140,16 @@
             <p>You’re using Guest mode. Describe your symptoms and get an instant basic analysis — no sign-up required.</p>
         </div>
 
+        <div class="assessment-tier-badge" id="assessment-tier-badge" hidden>
+            <span id="assessment-tier-label"></span>
+        </div>
+
+        <div class="assessment-gate" id="assessment-gate" hidden>
+            <div class="assessment-gate__spinner" aria-hidden="true"></div>
+            <p id="assessment-gate-message">Checking your account…</p>
+            <a href="index.html" class="button button-outline" id="assessment-gate-home-link" hidden>Back to Home</a>
+        </div>
+
         <form class="guest-assessment-form" id="assessment-form" action="#" method="post">
             <p id="assessment-error" class="form-error" hidden></p>
 
@@ -200,8 +210,8 @@
 
         <article class="assessment-form-card assessment-result" id="assessment-result" hidden>
             <div class="assessment-card-heading">
-                <h2>Your Basic Analysis</h2>
-                <p>Generated from what you described. Not a medical diagnosis.</p>
+                <h2>Your Analysis</h2>
+                <p id="result-tier-note">Generated from what you described. Not a medical diagnosis.</p>
             </div>
 
             <div class="assessment-result__risk">
@@ -224,6 +234,7 @@
 <script src="js/stripe-links.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/paywall.js"></script>
 <script src="js/assessment.js"></script>
 <script src="js/i18n/translations.js"></script>
 <script src="js/i18n.js"></script>

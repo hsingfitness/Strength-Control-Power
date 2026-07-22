@@ -31,8 +31,10 @@ class User(Base):
     name = Column(String(120), nullable=False)
     email = Column(String(255), unique=True, index=True, nullable=False)
     password_hash = Column(String(255), nullable=False)
-    # "user" (default) | "operator" | "super_admin"
+    # Admin role: "user" (default) | "operator" | "super_admin"
     role = Column(String(20), nullable=False, default="user")
+    # Assessment tier, purchased one-off via Stripe: "free" | "member" | "vip"
+    plan = Column(String(20), nullable=False, default="free")
     # Granular grants for operators, e.g. {"manage_products": true}.
     # super_admin ignores this and always has full access.
     permissions = Column(JSON, nullable=False, default=dict)

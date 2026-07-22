@@ -24,6 +24,14 @@ function renderAssessmentResult(report) {
     document.getElementById("result-summary").textContent = report.summary;
     document.getElementById("result-disclaimer").textContent = report.disclaimer;
 
+    const tierNote = document.getElementById("result-tier-note");
+    if (tierNote) {
+        tierNote.textContent =
+            report.tier === "customized"
+                ? "Personalized analysis from your paid plan. Not a medical diagnosis."
+                : "Generated from what you described. Not a medical diagnosis.";
+    }
+
     const list = document.getElementById("result-recommendations");
     list.innerHTML = "";
     report.recommendations.forEach((tip) => {

@@ -18,6 +18,7 @@ class UserOut(BaseModel):
     name: str
     email: EmailStr
     role: str = "user"
+    plan: str = "free"
     permissions: dict = Field(default_factory=dict)
 
     class Config:
@@ -39,6 +40,10 @@ class CheckoutItem(BaseModel):
 
 class CheckoutRequest(BaseModel):
     items: list[CheckoutItem] = Field(min_length=1)
+    # Where to send the browser after Stripe Checkout. Defaults to the cart
+    # page (marketplace orders); the assessment paywall passes its own.
+    success_path: str = "/cart.html?checkout=success"
+    cancel_path: str = "/cart.html?checkout=canceled"
 
 
 class CheckoutResponse(BaseModel):
@@ -71,6 +76,7 @@ class ReportOut(BaseModel):
     risk_level: str
     recommendations: list[str]
     disclaimer: str
+    tier: str = "free"
     created_at: datetime
 
 

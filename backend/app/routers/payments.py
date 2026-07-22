@@ -10,6 +10,11 @@ from ..schemas import CheckoutRequest, CheckoutResponse, OrderOut
 
 router = APIRouter(prefix="/payments", tags=["payments"])
 
+# Special product IDs that unlock an assessment plan instead of shipping
+# a physical/marketplace item. Keeps this on the generic checkout endpoint
+# rather than needing a separate one.
+PLAN_PRODUCT_IDS = {"plan-member": "member", "plan-vip": "vip"}
+
 
 def _frontend_base_url() -> str:
     origins = settings.FRONTEND_ORIGINS.strip()
@@ -28,6 +33,13 @@ def create_checkout_session(
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="Payments aren't configured yet. Set STRIPE_SECRET_KEY on the server.",
+        )
+
+    is_plan_purchase = any(item.id in PLAN_PRODUCT_IDS for item in payload.items)
+    if is_plan_purchase and current_user is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Please log in before purchasing a plan.",
         )
 
     stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -58,12 +70,16 @@ def create_checkout_session(
     db.commit()
     db.refresh(order)
 
+    success_path = payload.success_path if payload.success_path.startswith("/") else "/" + payload.success_path
+    cancel_path = payload.cancel_path if payload.cancel_path.startswith("/") else "/" + payload.cancel_path
+    joiner = "&" if "?" in success_path else "?"
+
     try:
         session = stripe.checkout.Session.create(
             mode="payment",
             line_items=line_items,
-            success_url=f"{base_url}/cart.html?checkout=success&order={order.id}",
-            cancel_url=f"{base_url}/cart.html?checkout=canceled",
+            success_url=f"{base_url}{success_path}{joiner}order={order.id}",
+            cancel_url=f"{base_url}{cancel_path}",
             metadata={"order_id": str(order.id)},
         )
     except stripe.error.StripeError as e:
@@ -75,6 +91,57 @@ def create_checkout_session(
     db.commit()
 
     return CheckoutResponse(checkout_url=session.url)
+
+
+def _finalize_order(order: Order, db: Session) -> None:
+    """Mark an order paid and apply any plan unlock. Shared by the webhook
+    and the verify-order fallback so both paths behave identically."""
+    if order.status == "paid":
+        return
+
+    order.status = "paid"
+
+    plan_ids = [PLAN_PRODUCT_IDS[i["id"]] for i in (order.items or []) if i.get("id") in PLAN_PRODUCT_IDS]
+    if plan_ids and order.user_id:
+        user = db.query(User).filter(User.id == order.user_id).first()
+        if user:
+            new_plan = "vip" if "vip" in plan_ids else "member"
+            if new_plan == "vip" or user.plan != "vip":
+                user.plan = new_plan
+
+    db.commit()
+
+
+@router.post("/orders/{order_id}/verify", response_model=OrderOut)
+def verify_order(
+    order_id: str,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Called when the browser lands back on a success page. Confirms
+    payment directly with Stripe and finalizes the order — a safety net
+    in case the webhook isn't configured yet or hasn't landed."""
+    order = db.query(Order).filter(Order.id == order_id).first()
+    if not order or order.user_id != str(current_user.id):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found.")
+
+    if order.status != "paid" and order.stripe_session_id and settings.STRIPE_SECRET_KEY:
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        try:
+            session = stripe.checkout.Session.retrieve(order.stripe_session_id)
+            if session.get("payment_status") == "paid":
+                _finalize_order(order, db)
+        except stripe.error.StripeError:
+            pass  # leave order as-is; webhook may still land
+
+    return OrderOut(
+        id=str(order.id),
+        items=order.items,
+        amount_total=float(order.amount_total),
+        currency=order.currency,
+        status=order.status,
+        created_at=order.created_at,
+    )
 
 
 @router.post("/webhook")
@@ -94,8 +161,7 @@ async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
         session = event["data"]["object"]
         order = db.query(Order).filter(Order.stripe_session_id == session["id"]).first()
         if order:
-            order.status = "paid"
-            db.commit()
+            _finalize_order(order, db)
 
     return {"received": True}
 

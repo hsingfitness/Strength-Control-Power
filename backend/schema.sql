@@ -9,6 +9,7 @@ create table if not exists users (
     email varchar(255) unique not null,
     password_hash varchar(255) not null,
     role varchar(20) not null default 'user', -- 'user' | 'operator' | 'super_admin'
+    plan varchar(20) not null default 'free', -- 'free' | 'member' | 'vip', purchased one-off via Stripe
     permissions jsonb not null default '{}'::jsonb, -- e.g. {"manage_products": true}, ignored for super_admin
     created_at timestamp default now()
 );
@@ -83,3 +84,4 @@ alter table products enable row level security;
 
 alter table users add column if not exists role varchar(20) not null default 'user';
 alter table users add column if not exists permissions jsonb not null default '{}'::jsonb;
+alter table users add column if not exists plan varchar(20) not null default 'free';

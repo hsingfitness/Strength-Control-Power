@@ -3327,3 +3327,51 @@ body.cart-open {
         grid-column: auto;
     }
 }
+
+/* ===============================
+   ASSESSMENT PAYWALL
+=============================== */
+
+.assessment-tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #EAF8F4;
+    color: var(--brand-dark);
+    font-weight: 800;
+    font-size: .82rem;
+}
+
+.assessment-gate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 70px 20px;
+    text-align: center;
+    background: white;
+    border: 1px solid #DDE3EA;
+    border-radius: var(--radius);
+}
+
+.assessment-gate__spinner {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #E3EAF2;
+    border-top-color: var(--brand);
+    animation: assessment-gate-spin .8s linear infinite;
+}
+
+@keyframes assessment-gate-spin {
+    to { transform: rotate(360deg); }
+}
+
+.assessment-gate p {
+    max-width: 420px;
+    color: var(--ink);
+    font-weight: 600;
+}
