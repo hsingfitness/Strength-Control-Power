@@ -109,6 +109,30 @@ DEFAULT_PRODUCTS = [
         price=18.99, category="meals", icon="🍽",
         badges=["Optional"], sort_order=17,
     ),
+    dict(
+        id="aromatherapy-diffuser-kit", name="Aromatherapy Diffuser Kit",
+        description="Ultrasonic diffuser with 6 essential oil starter blends.",
+        price=36.99, category="wellness", icon="♡",
+        badges=["Top Rated", "Optional"], sort_order=18,
+    ),
+    dict(
+        id="sleep-sound-machine", name="Sleep Sound Machine",
+        description="White noise and nature sounds for deeper, longer sleep.",
+        price=42.99, category="wellness", icon="♡",
+        badges=["Optional"], sort_order=19,
+    ),
+    dict(
+        id="guided-meditation-app-1yr", name="Guided Meditation App (1yr)",
+        description="Structured mindfulness and breathing programs.",
+        price=49.99, category="wellness", icon="♡",
+        badges=["Popular", "Optional"], sort_order=20,
+    ),
+    dict(
+        id="stress-relief-journal-set", name="Stress Relief Journal Set",
+        description="Guided journaling prompts for mental clarity and calm.",
+        price=16.99, category="wellness", icon="♡",
+        badges=["Optional"], sort_order=21,
+    ),
 ]
 
 
