@@ -113,11 +113,19 @@ DEFAULT_PRODUCTS = [
 
 
 def seed_products(db: Session) -> None:
-    """Insert the default catalog only if the products table is empty,
-    so this is safe to call on every startup."""
-    if db.query(Product).first() is not None:
-        return
+    """Insert any default-catalog product that isn't already in the
+    database yet, matched by id. Safe to call on every startup: existing
+    products (including ones edited via the admin dashboard) are left
+    untouched, and this naturally picks up new items added to
+    DEFAULT_PRODUCTS later without needing a manual migration step."""
+    existing_ids = {p.id for p in db.query(Product.id).all()}
 
+    added = False
     for data in DEFAULT_PRODUCTS:
+        if data["id"] in existing_ids:
+            continue
         db.add(Product(**data))
-    db.commit()
+        added = True
+
+    if added:
+        db.commit()
