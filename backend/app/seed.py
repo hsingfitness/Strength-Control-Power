@@ -61,6 +61,30 @@ DEFAULT_PRODUCTS = [
         price=19.99, category="herbs", icon="🌿",
         badges=["Optional"], sort_order=9,
     ),
+    dict(
+        id="smart-blood-pressure-monitor", name="Smart Blood Pressure Monitor",
+        description="Bluetooth-connected monitor with companion smartphone app.",
+        price=59.99, category="devices", icon="〽",
+        badges=["New", "Optional"], sort_order=10,
+    ),
+    dict(
+        id="continuous-glucose-tracker", name="Continuous Glucose Tracker",
+        description="Real-time glucose monitoring for metabolic awareness.",
+        price=89.99, category="devices", icon="〽",
+        badges=["Popular", "Optional"], sort_order=11,
+    ),
+    dict(
+        id="sleep-quality-sensor", name="Sleep Quality Sensor",
+        description="Advanced sleep stage tracking for better rest quality.",
+        price=49.99, category="devices", icon="〽",
+        badges=["Optional"], sort_order=12,
+    ),
+    dict(
+        id="body-composition-scale", name="Body Composition Scale",
+        description="Measure body fat, muscle mass, and hydration levels.",
+        price=44.99, category="devices", icon="〽",
+        badges=["Optional"], sort_order=13,
+    ),
 ]
 
 
