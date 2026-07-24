@@ -37,6 +37,11 @@
         document.querySelector(".assessment-intro").hidden = true;
         el("assessment-form").hidden = true;
 
+        const debug = el("assessment-gate-debug");
+        if (debug) {
+            debug.textContent = "URL: " + window.location.pathname + window.location.search;
+        }
+
         // Safety net: whatever happens, never leave someone stuck on a
         // spinner with no way out. If this gate is still showing after a
         // few seconds, reveal the home link regardless.
@@ -161,7 +166,17 @@
 
         showGate("Checking your account…", false);
 
-        const me = await refreshUser();
+        let me;
+        try {
+            me = await withTimeout(refreshUser(), 20000);
+        } catch (err) {
+            showGate(
+                "The server is taking a while to respond (it may be waking up from being idle). Please wait a moment and refresh.",
+                true
+            );
+            return;
+        }
+
         if (!me) {
             const redirectTarget = "assessment.html?unlock=" + encodeURIComponent(unlock);
             window.location.href = "login.html?redirect=" + encodeURIComponent(redirectTarget);
